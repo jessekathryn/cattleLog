@@ -14,13 +14,15 @@ class CowsController < ApplicationController
 
   # GET /cows/new
   def new
-    @cow = Cow.new
+    if !logged_in?
+      redirect_to cows_path(cow_params)
+    end
   end
 
   # GET /cows/1/edit
   def edit
     if !logged_in?
-      @attraction = Attraction.find(params[:id])
+      @cow = Cow.find(params[:id])
     end
   end
 
