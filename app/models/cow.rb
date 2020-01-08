@@ -1,0 +1,2 @@
+class Cow < ApplicationRecord
+end

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cow.name %>
+</p>
+
+<p>
+  <strong>Tag number:</strong>
+  <%= @cow.tag_number %>
+</p>
+
+<p>
+  <strong>Cow status:</strong>
+  <%= @cow.cow_status %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @cow.age %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @cow.birthdate %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @cow.weight %>
+</p>
+
+<p>
+  <strong>Health:</strong>
+  <%= @cow.health %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @cow.color %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cow.user_id %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @cow.notes %>
+</p>
+
+<p>
+  <strong>Field name:</strong>
+  <%= @cow.field_name %>
+</p>
+
+<%= link_to 'Edit', edit_cow_path(@cow) %> |
+<%= link_to 'Back', cows_path %>
