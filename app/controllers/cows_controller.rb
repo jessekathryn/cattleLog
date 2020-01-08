@@ -43,6 +43,7 @@ class CowsController < ApplicationController
   # PATCH/PUT /cows/1
   # PATCH/PUT /cows/1.json
   def update
+    @cow = Cow.find(params[:id])
     respond_to do |format|
       if @cow.update(cow_params)
         format.html { redirect_to @cow, notice: 'Cow was successfully updated.' }
@@ -57,7 +58,7 @@ class CowsController < ApplicationController
   # DELETE /cows/1
   # DELETE /cows/1.json
   def destroy
-    @cow.destroy
+    @cow.destroy 
     respond_to do |format|
       format.html { redirect_to cows_url, notice: 'Cow was successfully destroyed.' }
       format.json { head :no_content }
