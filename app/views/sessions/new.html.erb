@@ -1,9 +1,11 @@
+<h1>Sign In</h1>
+
 <%= form_for @user, url: login_path, method: :post do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
     <%= collection_select(:user, :username, User.all, :username, :username, prompt: "Please select your username from this dropdown") %>
-    <%= f.label :password %>
-    <%= f.password_field :password, :id => "password" %>
+    <%= f.label :password_digest %>
+    <%= f.password_field :password_digest, :id => "password_digest" %>
     <%= f.submit "Sign In" %>
     Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
   <% end %>

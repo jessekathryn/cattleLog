@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<strong>Account Details 
+for <%= @user.username %>, </strong>
+
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -10,28 +13,9 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Cows:</strong>
-  <%= @user.cows %>
-</p>
-
-<p>
-  <strong>Fields:</strong>
-  <%= @user.fields %>
-</p>
-
-<p>
-  <strong>Expenses:</strong>
-  <%= @user.expenses %>
-</p>
-
 <%= link_to 'Fields', fields_path(@user) %> |
 <%= link_to 'Expenses', expenses_path(@user) %> |
 <%= link_to 'Cows', cows_path(@user) %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> |
+
