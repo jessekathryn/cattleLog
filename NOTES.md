@@ -2,6 +2,11 @@ Created app repo
 made first commit
 fleshed out read me
 created rails new path to project
+created and deleted repo until happy with paths
+unsure of why the rails app asked me to generate a new rails project and would not use the generator immediately
+all done
+
+
 
 create skeleton from scaffold
 
@@ -25,7 +30,7 @@ Join table
         User.first.cows.first.expenses
     
     has many expenses through field
-        User.first field.first.exepnese 
+        User.first.field.first.exepnese 
 
 #clcode:
     rails g scaffold User username:string email:string password_digest:string cows:string fields:string expenses:string --no-test-framework
