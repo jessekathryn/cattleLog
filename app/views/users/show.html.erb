@@ -30,5 +30,8 @@
   <%= @user.expenses %>
 </p>
 
+<%= link_to 'Fields', fields_path(@user) %> |
+<%= link_to 'Expenses', expenses_path(@user) %> |
+<%= link_to 'Cows', cows_path(@user) %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
