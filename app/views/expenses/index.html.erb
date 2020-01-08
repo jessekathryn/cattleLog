@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Expenses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expense name</th>
+      <th>Truck</th>
+      <th>Chemicals</th>
+      <th>Conservation</th>
+      <th>Depreciation</th>
+      <th>Employees</th>
+      <th>Feed</th>
+      <th>Freight</th>
+      <th>Gas</th>
+      <th>Insurance</th>
+      <th>Interest</th>
+      <th>Mortgage</th>
+      <th>Rent</th>
+      <th>Repais</th>
+      <th>Seeds</th>
+      <th>Storage</th>
+      <th>Supplies</th>
+      <th>Taxes</th>
+      <th>Vet</th>
+      <th>Tools</th>
+      <th>Fencing land</th>
+      <th>Calf</th>
+      <th>Dues</th>
+      <th>Misc labor</th>
+      <th>Professional fees</th>
+      <th>User</th>
+      <th>Field name</th>
+      <th>Cow tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.expense_name %></td>
+        <td><%= expense.truck %></td>
+        <td><%= expense.chemicals %></td>
+        <td><%= expense.conservation %></td>
+        <td><%= expense.depreciation %></td>
+        <td><%= expense.employees %></td>
+        <td><%= expense.feed %></td>
+        <td><%= expense.freight %></td>
+        <td><%= expense.gas %></td>
+        <td><%= expense.insurance %></td>
+        <td><%= expense.interest %></td>
+        <td><%= expense.mortgage %></td>
+        <td><%= expense.rent %></td>
+        <td><%= expense.repais %></td>
+        <td><%= expense.seeds %></td>
+        <td><%= expense.storage %></td>
+        <td><%= expense.supplies %></td>
+        <td><%= expense.taxes %></td>
+        <td><%= expense.vet %></td>
+        <td><%= expense.tools %></td>
+        <td><%= expense.fencing_land %></td>
+        <td><%= expense.calf %></td>
+        <td><%= expense.dues %></td>
+        <td><%= expense.misc_labor %></td>
+        <td><%= expense.professional_fees %></td>
+        <td><%= expense.user_id %></td>
+        <td><%= expense.field_name %></td>
+        <td><%= expense.cow_tag_id %></td>
+        <td><%= link_to 'Show', expense %></td>
+        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expense', new_expense_path %>
