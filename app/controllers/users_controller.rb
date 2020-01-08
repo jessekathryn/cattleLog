@@ -10,7 +10,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-      render :show
+    if !logged_in?
+      redirect_to '/'
+    else
+      render :home
+    end
   end
 
   # GET /users/new
@@ -28,13 +32,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     return redirect_to controller: 'users', action: 'new' unless @user.save 
     session[:user_id] = @user.id
-
+    # redirect_to controller: 'welcome', action: 'home'
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :sessions, location: @new}
+        format.html { render :home, location: @welcome}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -72,6 +76,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password_digest, :cows, :fields, :expenses)
+      params.require(:user).permit(:username, :email, :password, :password_digest, :cows, :fields, :expenses)
     end
 end
