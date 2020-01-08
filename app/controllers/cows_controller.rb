@@ -19,6 +19,9 @@ class CowsController < ApplicationController
 
   # GET /cows/1/edit
   def edit
+    if !logged_in?
+      @attraction = Attraction.find(params[:id])
+    end
   end
 
   # POST /cows
