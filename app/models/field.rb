@@ -1,5 +1,5 @@
 class Field < ApplicationRecord
-    belongs to expenses
-    belongs to user
-    has many cows
+    belongs_to :expenses
+    belongs_to :user
+    has_many :cows
 end

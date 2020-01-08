@@ -1,5 +1,5 @@
 class Expense < ApplicationRecord
-    belongs to user
-    has many cows
-    has many fields 
+    belongs_to :user
+    has_many :cows
+    has_many :fields 
 end

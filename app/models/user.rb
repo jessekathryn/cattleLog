@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has many cows
-    has many fields through cow
-    has many expenses
+    has_many :cows
+    has_many :fields, through: :cow
+    has_many :expenses
 
 end
