@@ -1,15 +1,4 @@
 <%= form_with(model: cow, local: true) do |form| %>
-  <% if cow.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(cow.errors.count, "error") %> prohibited this cow from being saved:</h2>
-
-    <ul>
-      <% cow.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 
   <div class="field">
     <%= form.label :name %>
