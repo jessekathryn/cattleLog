@@ -1,1 +1,11 @@
-<h1>Hi there, <%= @user.username %></h1>.
+<h1>Hi there, <%= @user.username %>.</h1><br>
+
+<%= link_to 'Fields', fields_path(@user) %> |
+<%= link_to 'Expenses', expenses_path(@user) %> |
+<%= link_to 'Cows', cows_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> |
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+  <% end %>

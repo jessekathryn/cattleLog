@@ -16,6 +16,8 @@ class CowsController < ApplicationController
   def new
     if !logged_in?
       redirect_to cows_path(cow_params)
+    else
+      render :new
     end
   end
 
@@ -30,7 +32,6 @@ class CowsController < ApplicationController
   # POST /cows.json
   def create
     @cow = Cow.new(cow_params)
-
     respond_to do |format|
       if @cow.save
         format.html { redirect_to @cow, notice: 'Cow was successfully created.' }
