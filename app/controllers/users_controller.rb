@@ -31,15 +31,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    return redirect_to controller: 'users', action: 'new' unless @user.save 
-    session[:user_id] = @user.id
+    #return redirect_to controller: 'users', action: 'new' unless @user.save 
+   
     # redirect_to controller: 'welcome', action: 'home'
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :home, status: :created, location: @user }
       else
-        format.html { redirect_to '/signup', location: @user}
+        # params[:message]
+        # @message = params[:message]
+        format.html { redirect_to '/users/new', notice: @user.errors }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

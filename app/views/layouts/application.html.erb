@@ -16,7 +16,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-        <a class="navbar-brand" href="<%= new_user_url %>"/>Sign Up Here</a> | <a href="<%= login_url %>"/>Sign Up Here</a> 
+        <a class="navbar-brand" href="<%= new_user_url %>"/>Sign Up Here</a> | <a href="<%= login_url %>"/>Sign In Here</a> | <a href="<%= logout_url %>"/>Log Here</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -28,12 +28,7 @@
 
     <!-- content -->
     <div class="container"  role="main">
-    <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+  
       <%= yield %>
     </div>
   </body>
