@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 gem 'actionpack', '~> 6.0.0'
-gem 'railties', '~> 6.0.0'
+
 gem 'sprockets', github: 'rails/sprockets', branch: 'master'
 
 gem 'sass', '~> 3.4', '>= 3.4.22'
@@ -33,7 +33,7 @@ gem 'devise'
 gem 'pry'
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+#gem 'coffee-rails', '~> 3.1'
 
 # bootstrap
 gem 'bootstrap', '~> 4.4.1'
