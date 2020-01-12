@@ -34,7 +34,7 @@ gem 'pry'
 
 # Use CoffeeScript for .coffee assets and views
 #gem 'coffee-rails', '~> 3.1'
-
+gem 'boostrap-sass'
 # bootstrap
 gem 'bootstrap', '~> 4.4.1'
 
