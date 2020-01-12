@@ -30,7 +30,7 @@ gem 'pry'
 gem 'coffee-rails', '~> 4.2'
 
 # bootstrap
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap', '~> 4.4.1'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
