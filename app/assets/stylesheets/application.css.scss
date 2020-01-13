@@ -35,4 +35,13 @@
 
 @import "boostrap-sprockets";
 @import "boostrap";
+
+.call-to-action {
+    position: relative;
+    background-color: #343a40;
+    background: url(../images/cow_logo.png) no-repeat center center;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
 /*# sourceMappingURL=bootstrap.css.map */
