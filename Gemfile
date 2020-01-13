@@ -33,9 +33,11 @@ gem 'devise'
 gem 'pry'
 
 # Use CoffeeScript for .coffee assets and views
-#gem 'coffee-rails', '~> 3.1'
+gem 'coffee-rails'
+
 gem 'boostrap-sass'
 # bootstrap
+
 gem 'bootstrap', '~> 4.4.1'
 
 # Use Active Storage variant

@@ -1,39 +1,15 @@
-<!doctype html>
-<html>
-<body>
-    <form class="form-signin">
-    <%= bootstrap_form_for @user, url: login_path, method: :post do |f| %>
-    <div class="container"  role="main">
-    <div class="text-center mb-4">
-    <img class="mb-4" src="/cow_logo.jpg" alt="l" width="200" height="200">
-    <h1 class="h2 mb-3 font-weight-normal">Sign In</h1>
-    <p>Welcome to Cattle-Log</p>
-  </div>
-
-  <div class="form-label-group" >
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="form-label-group">
-    <%= f.password_field :password, :id => "password" %>
-  </div>
-
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  
-  <p class="mt-5 mb-3 text-muted text-center">© 2019</p>
-
-  </div>
-  </div>
-
+<p><%= notice %></p>
+<p> <%= form_for @user, url: login_path, method: :post do |f| %></p>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= collection_select(:user, :username, User.all, :username, :username, prompt: "Please select your username from this dropdown") %>
+  <%= f.label :password %>
+  <%= f.password_field :password, :id => "password" %>
+  <%= f.submit "Sign In" %>
+  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
 <% end %>
 
 </form>
-</body>
+
 </html>
 
