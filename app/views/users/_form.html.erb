@@ -1,5 +1,4 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if @user.errors.any? %>
+<% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
       <ul>
@@ -9,24 +8,32 @@
       </ul>
     </div>
   <% end %>
+ 
+<section class="call-to-action text-white text-center" style="background-image: url('https://i.ibb.co/d0YkNvJ/background2.png');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+      <img class="img-responsive"<a href="https://ibb.co/MnKzJwC"><img src="https://i.ibb.co/MnKzJwC/cow-background-300.png" alt="cow-background-300" width="150" height="150"></a>
+ 
+      </div>
+      <div class="mx-auto">
+      <h1 class="h3 mb-3 font-weight-normal">Join Cattlelog</h1>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
+<!-- Ruby  -->
+<p><%= notice %></p>
+  <p>  <%= form_with(model: user, local: true) do |form| %> </p>
+  <input type="username" class="form-control form-control-lg" placeholder="Username" <%= form.text_field :username %>
+  <input type="email" class="form-control form-control-lg" placeholder="Email" <%= form.text_field :email %>
+  <input type="password" class="form-control form-control-lg" placeholder="Password" <%= form.password_field :password, :id => "password" %>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+  

@@ -1,15 +1,27 @@
+<section class="call-to-action text-white text-center" style="background-image: url('https://i.ibb.co/d0YkNvJ/background2.png');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+      <img class="img-responsive"<a href="https://ibb.co/MnKzJwC"><img src="https://i.ibb.co/MnKzJwC/cow-background-300.png" alt="cow-background-300" width="150" height="150"></a>
+ 
+      </div>
+      <div class="mx-auto">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <!-- Ruby  -->
 <p><%= notice %></p>
 <p> <%= form_for @user, url: login_path, method: :post do |f| %></p>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= collection_select(:user, :username, User.all, :username, :username, prompt: "Please select your username from this dropdown") %>
-  <%= f.label :password %>
-  <%= f.password_field :password, :id => "password" %>
-  <%= f.submit "Sign In" %>
-  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+  <input type="username" class="form-control form-control-lg" placeholder="Username" <%= f.text_field :username %>
+  <input type="password" class="form-control form-control-lg" placeholder="Password" <%= f.password_field :password, :id => "password" %>
+  <label>
+  <input type="checkbox" value="remember-me"> Remember me
+  </label> 
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  
+  </div>
 <% end %>
-
-</form>
-
-</html>
-
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

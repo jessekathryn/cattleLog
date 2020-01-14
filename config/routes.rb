@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get '/signin' => 'sessions#new', as: '/'
   post '/login' => 'sessions#create', as: 'login'
-  get '/login' => 'sessions#new'
+
   post '/logout' => 'sessions#destroy'
-  get '/login' => 'users#home'
+
   get 'users/:id/edit' => 'users#edit'
  
   root 'welcome#home'
