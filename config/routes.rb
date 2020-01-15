@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new', as: '/'
   post '/login' => 'sessions#create', as: 'login'
 
+  get 'users/:id/edit' => 'users#edit'
   post '/logout' => 'sessions#destroy'
 
-  get 'users/:id/edit' => 'users#edit'
+  post '/cows/:id' => 'cows#create'
  
   root 'welcome#home'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

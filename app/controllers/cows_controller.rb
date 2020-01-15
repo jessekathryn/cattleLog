@@ -14,27 +14,21 @@ class CowsController < ApplicationController
 
   # GET /cows/new
   def new
-    if !logged_in?
-      redirect_to cows_path(cow_params)
-    else
-      render :new
-    end
+    @cow = Cow.new(cow_params)
   end
 
   # GET /cows/1/edit
   def edit
-    if !logged_in?
-      @cow = Cow.find(params[:id])
-    end
   end
 
   # POST /cows
   # POST /cows.json
   def create
     @cow = Cow.new(cow_params)
+    binding.pry
     respond_to do |format|
       if @cow.save
-        format.html { redirect_to @cow, notice: 'Cow was successfully created.' }
+        format.html { render :show, notice: 'Cow was successfully created.' }
         format.json { render :show, status: :created, location: @cow }
       else
         format.html { render :new }
@@ -51,7 +45,6 @@ class CowsController < ApplicationController
       if @cow.update(cow_params)
         format.html { redirect_to @cow, notice: 'Cow was successfully updated.' }
         format.json { render :show, status: :ok, location: @cow }
-      else
         format.html { render :edit }
         format.json { render json: @cow.errors, status: :unprocessable_entity }
       end
