@@ -125,9 +125,11 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3 border-bottom"> 
-      <h1 class="h2">Dashboard</h1>
+      <h1 class="h2"><%= @user.username.titlecase%>'s Herd</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
+
+          <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Cow', new_cow_path %></button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
@@ -137,7 +139,6 @@
           </button>
         </div>
       </div>
-    <h2><%=@user.username%> Cows</h2>
     <div class="table-responsive">
     <table class="table table-striped table-sm">
     <thead>
@@ -145,7 +146,7 @@
       <th>Name</th>
       <th>Tag number</th>
       <th>Cow status</th>
-      <th>Age</th>
+      <th>Age (Years)</th>
       <th>Birthdate</th>
       <th>Weight</th>
       <th>Health</th>
@@ -159,7 +160,7 @@
   <tbody>
     <% @cows.each do |cow| %>
       <tr>
-        <td><%= cow.name %></td>
+        <td><%= cow.name.titlecase %></td>
         <td><%= cow.tag_number %></td>
         <td><%= cow.cow_status %></td>
         <td><%= cow.age %></td>
@@ -180,4 +181,3 @@
 
 <br>
 
-<%= link_to 'New Cow', new_cow_path %>
