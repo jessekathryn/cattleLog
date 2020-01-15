@@ -139,6 +139,7 @@
     </div>
     <div class="table-responsive">
     <table class="table table-striped table-sm">
+    <p><%= notice %></p>
 <p>
   <strong>Name:</strong>
   <%= @cow.name.titlecase %>
@@ -194,4 +195,4 @@
   <%= @cow.field_name.titlecase %>
 </p>
 
-
+<%= link_to 'Destroy', @cow, method: :delete, data: { confirm: 'Are you sure?' } %>

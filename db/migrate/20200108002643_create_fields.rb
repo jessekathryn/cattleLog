@@ -6,6 +6,7 @@ class CreateFields < ActiveRecord::Migration[6.0]
       t.string :crop
       t.integer :coordinates
       t.integer :user_id
+      t.integer :cow_id
 
       t.timestamps
     end

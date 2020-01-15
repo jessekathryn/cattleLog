@@ -25,6 +25,7 @@ class CowsController < ApplicationController
   # POST /cows.json
   def create
     @cow = Cow.new(cow_params)
+    @cow.save
     respond_to do |format|
       if @cow.save
         format.html { render :show, notice: 'Cow was successfully created.' }
@@ -53,9 +54,9 @@ class CowsController < ApplicationController
   # DELETE /cows/1
   # DELETE /cows/1.json
   def destroy
-    @cow.destroy 
+    @cow.delete
     respond_to do |format|
-      format.html { redirect_to cows_url, notice: 'Cow was successfully destroyed.' }
+      format.html { render :cows, notice: 'Cow was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

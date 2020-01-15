@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_002702) do
     t.string "color"
     t.integer "user_id"
     t.string "notes"
-    t.string "field_name"
+    t.integer "field_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 2020_01_08_002702) do
     t.integer "misc_labor"
     t.integer "professional_fees"
     t.integer "user_id"
-    t.string "field_name"
-    t.integer "cow_tag_id"
+    t.integer "field_id"
+    t.integer "cow_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -67,11 +67,13 @@ ActiveRecord::Schema.define(version: 2020_01_08_002702) do
     t.string "crop"
     t.integer "coordinates"
     t.integer "user_id"
+    t.integer "cow_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "username"
     t.string "email"
     t.string "password_digest"
