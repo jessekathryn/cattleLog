@@ -47,36 +47,36 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link active" href="#">
-            <span data-feather="home"></span><img src="https://i.ibb.co/HnCPbhr/home.png" width="20" height="20"> My Farm <span class="sr-only">(current)</span>
+            <span data-feather="home"></span><img src="https://i.ibb.co/LktdsBP/home-icon.png" width="20" height="20"> My Farm <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/cows/">
-              <span data-feather="file"></span><img src="https://i.ibb.co/WBRSwqJ/cow-icon.png" width="25" height="25"> Cows
+              <span data-feather="file"></span><img src="https://i.ibb.co/C6TgVJJ/cow-copy.png" width="25" height="25"> Cows
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Products
+            <a class="nav-link" href="/equipment">
+              <span data-feather="shopping-cart"></span><img src="https://i.ibb.co/QJvmTng/noun-Tractor-1192.png" width="25" height="25">
+              Equipment
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Customers
+            <a class="nav-link" href="/fields">
+              <span data-feather="users"></span><img src="https://i.ibb.co/Q88xYfd/Monitor.png" width="25" height="25">
+              Fields
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
+            <a class="nav-link" href="/reports">
+              <span data-feather="bar-chart-2"><img src="https://i.ibb.co/HXW6F3Z/Graph.png" width="25" height="25"></span>
               Reports
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              Integrations
+            <a class="nav-link" href="/expenses">
+              <span data-feather="layers"><img src="https://i.ibb.co/0MzxB8g/Money.png" width="25" height="25"> </span>
+              Expenses
             </a>
           </li>
         </ul>
@@ -97,19 +97,19 @@
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="file-text"></span>
-              Last quarter
+              YTD
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="file-text"></span>
-              Social engagement
+              Current Week
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="file-text"></span>
-              Year-end sale
+              Today
             </a>
           </li>
         </ul>
@@ -133,9 +133,9 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <img src="https://i.ibb.co/x2gVDMk/download.png" <canvas class="my-4 w-100" id="myChart" width="700" height="380"></canvas>
 
-      <h2>Section title</h2>
+      <h2>Reports</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -262,15 +262,6 @@
             </tr>
           </tbody>
         </table>
-<%= link_to 'Fields', fields_path(@user) %> |
-<%= link_to 'Expenses', expenses_path(@user) %> |
-<%= link_to 'Cows', cows_path(@user) %> |
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> |
-
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %>
       </div>
     </main>
   </div>
