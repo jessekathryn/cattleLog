@@ -14,7 +14,7 @@ class CowsController < ApplicationController
 
   # GET /cows/new
   def new
-    @cow = Cow.new(cow_params)
+   @cow = Cow.new
   end
 
   # GET /cows/1/edit
@@ -25,7 +25,6 @@ class CowsController < ApplicationController
   # POST /cows.json
   def create
     @cow = Cow.new(cow_params)
-    binding.pry
     respond_to do |format|
       if @cow.save
         format.html { render :show, notice: 'Cow was successfully created.' }
@@ -69,6 +68,6 @@ class CowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cow_params
-      params.require(:cow).permit(:name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes, :field_name)
+      params.require(:cow).permit(:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes, :field_name)
     end
 end
