@@ -1,3 +1,14 @@
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
 <%= form_with(model: cow, local: true) do |form| %>
 
   <div class="field">
@@ -56,7 +67,6 @@
   </div>
 <br>
   <div class="actions">
-  <%= form.submit %>
+  <button class="btn btn-primary" type="submit">Save</button>
   </div>
 <% end %>
-<br>

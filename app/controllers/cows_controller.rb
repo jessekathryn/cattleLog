@@ -1,5 +1,6 @@
 class CowsController < ApplicationController
   before_action :set_cow, only: [:show, :edit, :update, :destroy]
+  before_action :current_user
 
   # GET /cows
   # GET /cows.json
@@ -25,11 +26,11 @@ class CowsController < ApplicationController
   # POST /cows.json
   def create
     @cow = Cow.new(cow_params)
-    @cow.save
+    binding.pry
       if @cow.save
-        redirect_to cows_path 
+        redirect_to :show
       else
-        render :new
+        redirect_to :cows
     end
   end
 
@@ -37,14 +38,6 @@ class CowsController < ApplicationController
   # PATCH/PUT /cows/1.json
   def update
     @cow = Cow.find(params[:id])
-    respond_to do |format|
-      if @cow.update(cow_params)
-        format.html { redirect_to @cow, notice: 'Cow was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cow }
-        format.html { render :edit }
-        format.json { render json: @cow.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /cows/1

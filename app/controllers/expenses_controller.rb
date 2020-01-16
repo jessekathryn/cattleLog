@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
+  before_action :current_user
 
   # GET /expenses
   # GET /expenses.json
@@ -69,6 +70,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:expense_name, :truck, :chemicals, :conservation, :depreciation, :employees, :feed, :freight, :gas, :insurance, :interest, :mortgage, :rent, :repais, :seeds, :storage, :supplies, :taxes, :vet, :tools, :fencing_land, :calf, :dues, :misc_labor, :professional_fees, :user_id, :field_name, :cow_tag_id)
+      params.require(:expense).permit(:expense_name, :truck, :chemicals, :conservation, :depreciation, :employees, :feed, :freight, :gas, :insurance, :interest, :mortgage, :rent, :repais, :seeds, :storage, :supplies, :taxes, :vet, :tools, :fencing_land, :calf, :dues, :misc_labor, :professional_fees, :user_id, :field_id, :cow_id)
     end
 end

@@ -12,9 +12,10 @@ Rails.application.routes.draw do
 
   get 'users/:id/edit' => 'users#edit'
 
-  get '/cows' => 'cows#new'
-  post '/cows/new' => 'cows#create'
-  get  '/cows/:id' =>  'cows#show'
+  get '/cows/new' => 'cows#new'
+  post '/cows' => 'cows#create'
+  get '/cows/:id' => 'cows#show'
+  post '/cows/new' =>	'cows#create'
 
  
   root 'welcome#home'
