@@ -1,6 +1,4 @@
-class WelcomeController < ApplicationController
-    
+class WelcomeController < ApplicationController 
     def home
     end
-
 end
