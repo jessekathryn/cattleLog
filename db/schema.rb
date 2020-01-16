@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_002702) do
     t.string "color"
     t.integer "user_id"
     t.string "notes"
+    t.string "field_name"
     t.integer "field_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

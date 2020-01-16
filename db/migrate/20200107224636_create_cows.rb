@@ -11,6 +11,7 @@ class CreateCows < ActiveRecord::Migration[6.0]
       t.string :color
       t.integer :user_id
       t.string :notes
+      t.string :field_name
       t.integer :field_id
 
       t.timestamps

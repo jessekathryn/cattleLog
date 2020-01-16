@@ -15,7 +15,7 @@ class CowsController < ApplicationController
 
   # GET /cows/new
   def new
-   @cow = Cow.new
+    @cow = Cow.new
   end
 
   # GET /cows/1/edit
@@ -26,11 +26,15 @@ class CowsController < ApplicationController
   # POST /cows.json
   def create
     @cow = Cow.new(cow_params)
-    binding.pry
+
+    respond_to do |format|
       if @cow.save
-        redirect_to :show
+        format.html { redirect_to @cow, notice: 'Expense was successfully created.' }
+        format.json { render :show, status: :created, location: @cow }
       else
-        redirect_to :cows
+        format.html { render :new }
+        format.json { render json: @cow.errors, status: :unprocessable_entity }
+      end
     end
   end
 

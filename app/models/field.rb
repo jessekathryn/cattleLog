@@ -1,5 +1,6 @@
 class Field < ApplicationRecord
-    belongs_to :expenses
-    belongs_to :user
-    has_many :cows
+   belongs_to :user
+
+   has_many :cows, through: :user
+   has_many :expenses, through: :user
 end
