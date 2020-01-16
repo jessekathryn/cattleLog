@@ -35,7 +35,7 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" href="/signout">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -46,7 +46,7 @@
       <div class="sidebar-sticky pt-4">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="/users/id/">
+            <a class="nav-link active" href="users_path">
             <span data-feather="home"></span><img src="https://i.ibb.co/LktdsBP/home-icon.png" width="20" height="20"> My Farm <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -162,7 +162,7 @@
         <td><%= user.expenses %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', user, method: :destroy %></td>
       </tr>
     <% end %>
           </tbody>

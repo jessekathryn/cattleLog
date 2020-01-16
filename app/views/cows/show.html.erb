@@ -35,7 +35,7 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" href="/signout">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -127,7 +127,7 @@
     <h1 class="h2"><%= @cow.name.titlecase %></h1>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group mr-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Destroy', @cow, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <button type="button" class="btn btn-sm btn-outline-secondary"><a class="nav-link" href="/cows/destroy">Delete</a>
           <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
           <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
         </div>
@@ -192,7 +192,6 @@
 
 <p>
   <strong>Field name:</strong>
-  <%= @cow.field_name.titlecase %>
+  <%= @cow.field_id %>
 </p>
 
-<%= link_to 'Destroy', @cow, method: :delete, data: { confirm: 'Are you sure?' } %>

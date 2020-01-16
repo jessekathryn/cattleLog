@@ -26,14 +26,10 @@ class CowsController < ApplicationController
   def create
     @cow = Cow.new(cow_params)
     @cow.save
-    respond_to do |format|
       if @cow.save
-        format.html { render :show, notice: 'Cow was successfully created.' }
-        format.json { render :show, status: :created, location: @cow }
+        redirect_to cows_path 
       else
-        format.html { render :new }
-        format.json { render json: @cow.errors, status: :unprocessable_entity }
-      end
+        render :new
     end
   end
 
@@ -54,11 +50,8 @@ class CowsController < ApplicationController
   # DELETE /cows/1
   # DELETE /cows/1.json
   def destroy
-    @cow.delete
-    respond_to do |format|
-      format.html { render :cows, notice: 'Cow was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @cow.destroy
+    render :index
   end
 
   private
@@ -69,6 +62,6 @@ class CowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cow_params
-      params.require(:cow).permit(:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes, :field_name)
+      params.require(:cow).permit(:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes, :field_id)
     end
 end

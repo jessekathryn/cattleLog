@@ -24,7 +24,12 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if !logged_in?
+      redirect_to '/'
+    else
+      render :edit
   end
+end
 
   # POST /users
   # POST /users.json

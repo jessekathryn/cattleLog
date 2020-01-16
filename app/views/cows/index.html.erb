@@ -35,7 +35,7 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" href="/signout">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -171,10 +171,9 @@
         <td><%= cow.color %></td>
         <td><%= cow.user_id %></td>
         <td><%= cow.notes %></td>
-        <td><%= cow.field_name %></td>
+        <td><%= cow.field_id %></td>
         <td><%= link_to 'Show', cow %></td>
         <td><%= link_to 'Edit', edit_cow_path(cow) %></td>
-        <td><%= link_to 'Destroy', cow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
