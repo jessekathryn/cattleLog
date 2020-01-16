@@ -33,7 +33,6 @@ end
         redirect_to @user
       else
         redirect_to '/users/new'
-      end
     end
   end
 
@@ -62,4 +61,4 @@ end
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_digest, :cows, :fields, :expenses)
     end
-end
+  end

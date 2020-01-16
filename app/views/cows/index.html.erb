@@ -182,9 +182,10 @@
         <td><%= cow.color %></td>
         <td><%= cow.user_id %></td>
         <td><%= cow.notes %></td>
-        <td><%= cow.field_id %></td>
+        <td><%= cow.field_name %></td>
         <td><%= link_to 'Show', cow %></td>
         <td><%= link_to 'Edit', edit_cow_path(cow) %></td>
+        <td><%= link_to 'Destroy',  cow,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

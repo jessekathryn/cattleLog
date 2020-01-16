@@ -7,6 +7,7 @@ class CowsController < ApplicationController
   end
 
   def show
+    
   end
 
   def new
@@ -27,11 +28,21 @@ class CowsController < ApplicationController
 
   def update
     @cow = Cow.find(params[:id])
+    if @cow.update(cow_params)
+      redirect_to @cow
+    else
+      render :new
+    end
   end
 
   def destroy
-    @cow.destroy
-    render :index
+    binding.pry
+    @cow = Cow.find(params[:id])
+    if @cow.destroy(cow_params)
+      render :index
+    else
+      redirect_to :index
+    end
   end
 
   private
@@ -40,6 +51,6 @@ class CowsController < ApplicationController
     end
 
     def cow_params
-      params.require(:cow).permit(:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes, :field_id)
+      params.require(:cow).permit(:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes, :field_name, :field_id)
     end
 end

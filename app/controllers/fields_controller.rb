@@ -34,14 +34,12 @@ class FieldsController < ApplicationController
       else
         render :edit 
       end
-    end
   end
 
 
   def destroy
     @field.destroy
       redirect_to fields_url
-    end
   end
 
   private
