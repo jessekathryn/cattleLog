@@ -50,6 +50,6 @@ class equipmentsController < ApplicationController
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def equipment_params
-        params.require(:equipment).permit(:equipment_name, :acreage, :crop, :coordinates, :user_id)
+        params.require(:equipment).permit(:equipment_name, :cow_id, :crop, :coordinates, :user_id)
       end
   end
