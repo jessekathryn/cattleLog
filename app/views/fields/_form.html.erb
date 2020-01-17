@@ -185,8 +185,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.hidden_field :user_id, :value => @user.id %>
   </div>
 
   <br>
@@ -194,3 +193,4 @@
   <button class="btn btn-primary" type="submit">Save</button>
   </div>
 <% end %>
+

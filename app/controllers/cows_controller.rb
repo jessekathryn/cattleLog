@@ -38,7 +38,7 @@ class CowsController < ApplicationController
   def destroy
     @cow = Cow.find_by(:id => params[:id])
     @cow.destroy
-    redirect_to cows_path, :notice => "Cow Deleted."
+    redirect_to cows_url
   end
 
   private

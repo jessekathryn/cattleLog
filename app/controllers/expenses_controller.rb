@@ -20,7 +20,8 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
       if 
-        expense.save
+        @expense.save
+        redirect_to @expense
       else
         render :new 
     end
