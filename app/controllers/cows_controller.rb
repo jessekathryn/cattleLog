@@ -36,13 +36,9 @@ class CowsController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    @cow = Cow.find(params[:id])
-    if @cow.destroy(cow_params)
-      render :index
-    else
-      redirect_to :index
-    end
+    @cow = Cow.find_by(:id => params[:id])
+    @cow.destroy
+    redirect_to cows_path, :notice => "Cow Deleted."
   end
 
   private
