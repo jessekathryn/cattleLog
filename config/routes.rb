@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :cows
   resources :users
   resources :reports
-  resources :equipment
+  resources :equipments
 
   get '/signin' => 'sessions#new', as: '/'
   post '/login' => 'sessions#create', as: 'login'

@@ -1,4 +1,4 @@
-class equipmentsController < ApplicationController
+class EquipmentsController < ApplicationController
     before_action :set_equipment, only: [:show, :edit, :update, :destroy]
     before_action :current_user
   
@@ -50,6 +50,6 @@ class equipmentsController < ApplicationController
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def equipment_params
-        params.require(:equipment).permit(:equipment_name, :cow_id, :crop, :coordinates, :user_id)
+        params.require(:equipment).permit(:name, :field_id, :user_id, :year, :expense_id)
       end
   end
