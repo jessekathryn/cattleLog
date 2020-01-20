@@ -1,21 +1,21 @@
 class ToolsController < ApplicationController
-    before_action :set_tools, only: [:show, :edit, :update, :destroy]
+    before_action :set_tool, only: [:show, :edit, :update, :destroy]
     before_action :current_user
 
   def index
-    @tools = Tools.all
+    @tools = Tool.all
   end
 
   def show
     if !logged_in?
       redirect_to '/'
     else
-      render :home
+      render :index
     end
   end
 
   def new
-    @tool = Tools.new
+    @tool = Tool.new
   end
 
   def edit
@@ -27,14 +27,14 @@ class ToolsController < ApplicationController
 end
 
   def create
-    @tool = Tools.new(tool_params)
-      if @tool.save
-        session[:tool_id] = @tool.id
-        redirect_to @tool
-      else
-        redirect_to '/tools/new'
+    @tool = Tool.new(tool_params)
+
+    if @tool.save
+      redirect_to @tool
+    else
+      render :new
     end
-  end
+ end
 
   def update
       if @tool.update(tool_params)
@@ -54,12 +54,12 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tool
-      @tool = Tools.find_by(params[:id])
+      @tool = Tool.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tool_params
-      params.require(:tool).permit(:user_id, :cow_id, :field_id, :expense_id)
+      params.require(:tool).permit(:id, :name, :user_id, :cow_id, :field_id, :expense_id)
     end
 
 end

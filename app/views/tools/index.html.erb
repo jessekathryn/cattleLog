@@ -167,9 +167,6 @@
     <% @tools.each do |tool| %>
       <tr>
         <td><%= tool.name %></td>
-        <td><%= tool.user_id %></td>
-        <td><%= tool.cow_id %></td>
-        <td><%= tool.field_id %></td>
         <td><%= link_to 'Show', tool %></td>
         <td><%= link_to 'Edit', tool_user_path(tool) %></td>
         <td><%= link_to 'Destroy', tool, method: :destroy %></td>

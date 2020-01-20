@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :cows
       t.string :fields
       t.string :expenses
+      t.string :tools
+      t.string :reports
 
       t.timestamps
     end
