@@ -1,13 +1,15 @@
 <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <div id="error">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
       <ul>
         <% user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
-    </div>
+    </div> 
   <% end %>
+
+<p id="notice"><%= notice %></p>
  
 <section class="call-to-action text-white text-center" style="background-image: url('https://i.ibb.co/d0YkNvJ/background2.png');">
   <div class="container">
