@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_08_002702) do
+ActiveRecord::Schema.define(version: 2020_01_20_214427) do
 
   create_table "cows", force: :cascade do |t|
     t.string "name"
@@ -68,6 +68,22 @@ ActiveRecord::Schema.define(version: 2020_01_08_002702) do
     t.string "crop"
     t.integer "coordinates"
     t.integer "user_id"
+    t.integer "cow_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "field_id"
+    t.integer "cow_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tools", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "field_id"
     t.integer "cow_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
