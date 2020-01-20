@@ -1,0 +1,32 @@
+notes of schema for tables
+
+class CreateReports < ActiveRecord::Migration[6.0]
+  def change
+    create_table :reports do |t|
+      t.string :name
+      t.integer :equipment_id
+      t.integer :user_id
+      t.integer :field_id
+      t.integer :cow_id
+      t.integer :expense_id
+
+      t.timestamps
+    end
+  end
+end
+
+
+class CreateEquipments < ActiveRecord::Migration[6.0]
+  def change
+    create_table :equipments do |t|
+     t.string :name
+     t.integer :field_id
+     t.integer :user_id
+     t.string :year
+     t.integer :expense_id
+
+     t.timestamps
+    end
+  end
+end
+ 

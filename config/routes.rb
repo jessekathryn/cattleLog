@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
   resources :expenses
   resources :fields
   resources :cows
   resources :users
-  resources :reports
-  resources :equipments
+
 
   get '/signin' => 'sessions#new', as: '/'
   post '/login' => 'sessions#create', as: 'login'

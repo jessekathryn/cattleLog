@@ -6,8 +6,7 @@ class CowsController < ApplicationController
     @cows = Cow.all
   end
 
-  def show
-    
+  def show 
   end
 
   def new

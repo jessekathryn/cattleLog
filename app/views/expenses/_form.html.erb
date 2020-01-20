@@ -11,6 +11,21 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+  <%= form.label :cow_id%>
+  <%= form.text_field :cow_id %>
+  </div>
+
+  <div class="field">
+  <%= form.label :field_id %>
+  <%= form.text_field :field_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :expense_date %>
     <%= form.text_field :expense_name %>
   </div>
@@ -133,11 +148,6 @@
   <div class="field">
     <%= form.label :professional_fees %>
     <%= form.number_field :professional_fees %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
   </div>
 
   <div class="field">
