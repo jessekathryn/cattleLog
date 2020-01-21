@@ -7,7 +7,6 @@ class CowsController < ApplicationController
   end
 
   def show
-    
   end
 
   def new
@@ -28,6 +27,7 @@ class CowsController < ApplicationController
 
   def update
     @cow = Cow.find(params[:id])
+    binding.pry
     if @cow.update(cow_params)
       redirect_to @cow
     else
@@ -37,6 +37,7 @@ class CowsController < ApplicationController
 
   def destroy
     @cow = Cow.find_by(:id => params[:id])
+    binding.pry
     @cow.destroy
     redirect_to cows_url
   end

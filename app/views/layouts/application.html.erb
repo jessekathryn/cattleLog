@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <%= javascript_include_tag 'rails-ujs' %>
+  <%= csrf_meta_tag %>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +14,7 @@
   
   <!-- Custom styles for this template -->
   <link href="https://blackrockdigital.github.io/startbootstrap-landing-page/css/landing-page.css" rel="stylesheet">
-
+</head>
   <body>
   
       <%= yield %>
