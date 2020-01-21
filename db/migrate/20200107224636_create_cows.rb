@@ -13,6 +13,8 @@ class CreateCows < ActiveRecord::Migration[6.0]
       t.string :notes
       t.string :field_name
       t.integer :field_id
+      t.integer :expense_id
+      t.integer :report_id
 
       t.timestamps
     end

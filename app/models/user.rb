@@ -5,6 +5,7 @@ class User < ApplicationRecord
     has_many :fields
     has_many :tools
     has_many :expenses
+    has_many :reports
 
 
     validates :email, uniqueness: true

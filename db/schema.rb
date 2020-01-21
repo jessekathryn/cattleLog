@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.string "notes"
     t.string "field_name"
     t.integer "field_id"
+    t.integer "expense_id"
+    t.integer "report_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -58,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.integer "user_id"
     t.integer "field_id"
     t.integer "cow_id"
+    t.integer "report_id"
+    t.integer "tool_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -66,9 +70,12 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.string "field_name"
     t.integer "acreage"
     t.string "crop"
-    t.integer "coordinates"
+    t.string "latitude"
+    t.string "longitude"
     t.integer "user_id"
     t.integer "cow_id"
+    t.integer "expense_id"
+    t.integer "tool_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -79,12 +86,14 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.integer "user_id"
     t.integer "field_id"
     t.integer "cow_id"
+    t.integer "expense_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tools", force: :cascade do |t|
     t.string "name"
+    t.string "price"
     t.integer "user_id"
     t.integer "field_id"
     t.integer "cow_id"

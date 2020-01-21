@@ -6,6 +6,7 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :field_id
       t.integer :cow_id
+      t.integer :expense_id
 
       t.timestamps
     end

@@ -1,8 +1,8 @@
 class Cow < ApplicationRecord
-    has_many :expenses
+    belongs_to :user
+
     has_many :fields, through: :cow
     has_many :reports, through: :user
-    belongs_to :user
-        
+          
  
 end
