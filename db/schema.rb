@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
   end
 
   create_table "reports", force: :cascade do |t|
+    t.string "name"
+    t.string "date"
     t.integer "user_id"
     t.integer "field_id"
     t.integer "cow_id"

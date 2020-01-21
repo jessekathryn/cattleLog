@@ -2,7 +2,6 @@ class ToolsController < ApplicationController
     before_action :set_tool, only: [:show, :edit, :update, :destroy]
     before_action :current_user
 
-    binding.pry
   def index
     @tools = Tool.all
   end

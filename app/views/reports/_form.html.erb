@@ -1,9 +1,9 @@
-<%= form_with(model: tool, local: true) do |form| %>
-  <% if tool.errors.any? %>
+<%= form_with(model: report, local: true) do |form| %>
+  <% if report.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(tool.errors.count, "error") %> prohibited this field from being saved:</h2>
       <ul>
-        <% tool.errors.full_messages.each do |message| %>
+        <% report.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -70,7 +70,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tools/">
+              <a class="nav-link" href="/tools">
                 <span data-feather="shopping-cart"></span><img src="https://i.ibb.co/QJvmTng/noun-Tractor-1192.png" width="25" height="25">
                 Equipment
               </a>
@@ -139,11 +139,11 @@
   
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3 border-bottom"> 
-        <h1 class="h2"><%= @user.username.titlecase%>'s Tools</h1>
+        <h1 class="h2"><%= @user.username.titlecase%>'s Reports</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
   
-            <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Tool', new_tool_path %></button>
+            <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Report', new_report_path %></button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
             </div>
@@ -157,6 +157,11 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div> 
+
+  <div class="field">
+  <%= form.label :date %>
+  <%= form.text_field :date %>
+</div> 
    
   <div class="field">
     <%= form.label :field_id %>

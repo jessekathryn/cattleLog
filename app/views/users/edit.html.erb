@@ -69,7 +69,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/equipments">
+            <a class="nav-link" href="/tools/">
               <span data-feather="shopping-cart"></span><img src="https://i.ibb.co/QJvmTng/noun-Tractor-1192.png" width="25" height="25">
               Equipment
             </a>
@@ -158,21 +158,21 @@
         <ul>
 
         <strong>Username:</strong>
-        <%= @user.username %>
+        <%= @tool.name %>
         <div class="col-15">
-        <input type="username" class="form-control" placeholder="Username" <%= form.text_field :username %>
+        <input type="username" class="form-control" placeholder="Name" <%= form.text_field :name %>
         </div>
         
         <strong>Email:</strong>
-        <%= @user.email %>
+        <%= @tool.id %>
         <div class="col-15">
-        <input type="email" class="form-control" placeholder="Email" <%= form.text_field :email %>
+        <input type="email" class="form-control" placeholder="id" <%= form.text_field :id %>
         </div>
 
         <strong>Password:</strong>
-        <%= @user.password %>
+        <%= @tool.field_id %>
         <div class="col-15">
-        <input type="password" class="form-control" placeholder="Password" <%= form.password_field :password, :id => "password" %>
+        <input type="password" class="form-control" placeholder="Field" <%= form.text_field :field_id %>
         </div>
         <p>
         <div class="col-15">
