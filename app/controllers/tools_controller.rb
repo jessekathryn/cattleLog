@@ -2,6 +2,7 @@ class ToolsController < ApplicationController
     before_action :set_tool, only: [:show, :edit, :update, :destroy]
     before_action :current_user
 
+    binding.pry
   def index
     @tools = Tool.all
   end
@@ -28,9 +29,8 @@ end
 
   def create
     @tool = Tool.new(tool_params)
-
     if @tool.save
-      redirect_to @tool
+      render :show
     else
       render :new
     end
