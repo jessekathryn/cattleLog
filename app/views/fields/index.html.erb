@@ -160,8 +160,9 @@
         <td><%= field.field_name %></td>
         <td><%= field.acreage %></td>
         <td><%= field.crop %></td>
-        <td><%= field.coordinates %></td>
-        <td><%= field.user_id %></td>
+        <td><%= field.latitude %></td>
+        <td><%= field.longitude%></td>
+        <td><%= field.timestamps%></td>
         <td><%= link_to 'Show', field %></td>
         <td><%= link_to 'Edit', edit_field_path(field) %></td>
         <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
