@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.integer "field_id"
     t.integer "cow_id"
     t.integer "expense_id"
+    t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
