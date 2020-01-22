@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.string "field_name"
     t.integer "acreage"
     t.string "crop"
-    t.string "latitude"
+    t.string "lattitude"
     t.string "longitude"
     t.integer "user_id"
     t.integer "cow_id"

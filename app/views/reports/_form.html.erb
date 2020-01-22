@@ -1,7 +1,8 @@
 <%= form_with(model: report, local: true) do |form| %>
   <% if report.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(tool.errors.count, "error") %> prohibited this field from being saved:</h2>
+      <h2><%= pluralize(report.errors.count, "error") %> prohibited this field from being saved:</h2>
+
       <ul>
         <% report.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -9,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-  
   <p id="notice"><%= notice %></p>
   
   <!-- Favicons -->
@@ -161,27 +161,36 @@
   <div class="field">
   <%= form.label :date %>
   <%= form.text_field :date %>
-</div> 
-   
-  <div class="field">
-    <%= form.label :field_id %>
-    <%= form.text_field :field_id %>
   </div> 
 
   <div class="field">
-    <%= form.label :cow_id %>
-    <%= form.text_field :cow_id %>
-  </div>
+  <%= form.label :content%>
+  <%= form.text_field :content %>
+  </div> 
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+  <%= form.label :Fields_included%>
+  <%= form.collection_check_boxes :field_ids, Field.all, :id, :name %>
+  <br>
+  
+  <%= form.fields_for :field, report.fields.build do |fields_fields| %>
+    <%= fields_fields.label :New_name %>
+    <%= fields_fields.text_field :New_name %>
+    <% end %>
   </div>
-
+ 
   <div class="field">
-    <%= form.hidden_field :user_id, :value => @user.id %>
+  <%= form.hidden_field :user_id, :value => @user.id %>
+  <%= form.label :Report_for_cows%>
+  <%= form.collection_check_boxes :cow_ids, Cow.all, :id, :name %>
+  <br>
+  
+  <%= form.fields_for :cow, report.cows.build do |cows_fields| %>
+    <%= cows_fields.label :name %>
+    <%= cows_fields.text_field :name %>
+    <% end %>
   </div>
-
+  
   <br>
   <div class="actions">
   <button class="btn btn-primary" type="submit">Save</button>

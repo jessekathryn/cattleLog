@@ -4,7 +4,7 @@ class CreateFields < ActiveRecord::Migration[6.0]
       t.string :field_name
       t.integer :acreage
       t.string :crop
-      t.string :latitude
+      t.string :lattitude
       t.string :longitude
       t.integer :user_id
       t.integer :cow_id
