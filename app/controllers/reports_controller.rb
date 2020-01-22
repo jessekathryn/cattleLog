@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
-    before_action :set_report, only: [:show, :edit, :update, :destroy]
-  before_action :current_user
+  before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
 
 
   def index

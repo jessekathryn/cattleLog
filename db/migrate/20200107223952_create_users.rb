@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :expenses
       t.string :tools
       t.string :reports
+      t.boolean "admin", default: false 
 
       t.timestamps
     end

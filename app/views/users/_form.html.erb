@@ -1,3 +1,4 @@
+
 <% if @user.errors.any? %>
     <div id="error">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -8,30 +9,33 @@
       </ul>
     </div> 
   <% end %>
-
-<p id="notice"><%= notice %></p>
  
 <section class="call-to-action text-white text-center" style="background-image: url('https://i.ibb.co/d0YkNvJ/background2.png');">
   <div class="container">
     <div class="row">
       <div class="col-xl-9 mx-auto">
       <img class="img-responsive"<a href="https://ibb.co/MnKzJwC"><img src="https://i.ibb.co/MnKzJwC/cow-background-300.png" alt="cow-background-300" width="150" height="150"></a>
- 
       </div>
       <div class="mx-auto">
       <h1 class="h3 mb-3 font-weight-normal">Join Cattlelog</h1>
 
 <!-- Ruby  -->
-<p><%= notice %></p>
-  <p>  <%= form_with(model: user, local: true) do |form| %> </p>
-  <input type="username" class="form-control form-control-lg" placeholder="Username" <%= form.text_field :username %>
-  <input type="email" class="form-control form-control-lg" placeholder="Email" <%= form.text_field :email %>
-  <input type="password" class="form-control form-control-lg" placeholder="Password" <%= form.password_field :password, :id => "password" %>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
 
-  </div>
+  <p>  <%= form_with(model: user, local: true) do |form| %> </p>
+  <input class="form-control form-control-lg" placeholder="Username" required="" <%= form.text_field :username %>
+  <input class="form-control form-control-lg" placeholder="Email"  required="" <%= form.text_field :email %>
+  <input class="form-control form-control-lg" placeholder="Password"  required="" <%= form.password_field :password, :id => "password" %>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+  <label>
+  <input type="checkbox" value="remember_me"> Remember me  
+  <div class="field">
+  <%= form.check_box :admin %>
+  <%= form.label :admin %>
+ 
+</div>
+
+  </label> 
 <% end %>
-          </div>
         </div>
       </div>
     </div>

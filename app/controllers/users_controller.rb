@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :current_user
+  before_action :logged_in?
 
   def index
+   if !is_admin?
+      render :home
+    else
     @users = User.all
   end
+end
 
   def show
     if !logged_in?
@@ -28,11 +32,15 @@ end
 
   def create
     @user = User.new(user_params)
+    respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        redirect_to @user
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :home, status: :created, location: @user }
       else
-        redirect_to '/users/new'
+        format.html { render :new, location: @welcome}
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 
