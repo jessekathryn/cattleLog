@@ -55,6 +55,7 @@ end
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @user = User.find_by(params[:id])
     @user.destroy
      redirect_to users_url
   end
