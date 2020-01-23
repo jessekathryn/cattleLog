@@ -1,14 +1,5 @@
 
-<% if @user.errors.any? %>
-    <div id="error">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div> 
-  <% end %>
+
  
 <section class="call-to-action text-white text-center" style="background-image: url('https://i.ibb.co/d0YkNvJ/background2.png');">
   <div class="container">
@@ -21,17 +12,22 @@
 
 <!-- Ruby  -->
 
+<% if @user.errors.any? %>
+        <% user.errors.full_messages.each do |message| %>
+        <%= message %>
+        <% end %>
+  <% end %>
+  <div class="col-xl-9 mx-auto">
   <p> <%= form_with(model: user, local: true) do |form| %> </p>
-  <input class="form-control form-control-lg" placeholder="Username" required="" <%= form.text_field :username %>
+  <input class="form-control form-control-lg" placeholder="Username" required=""<%= form.text_field :username%>
   <input class="form-control form-control-lg" placeholder="Email"  required="" <%= form.text_field :email %>
   <input class="form-control form-control-lg" placeholder="Password"  required="" <%= form.password_field :password, :id => "password" %>
-  <%= form.label :admin %>
-  <%= form.check_box :admin %>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   <label>
   <input type="checkbox" value="remember_me"> Remember me  
   </label> 
-<% end %>
+  <% end %>
+</div>
         </div>
       </div>
     </div>

@@ -17,17 +17,18 @@ class CowsController < ApplicationController
   end
 
   def create
+    if logged_in?
     @cow = Cow.new(cow_params)
     if @cow.save
       redirect_to @cow
     else
       render :new
     end
+    end
   end
 
   def update
     @cow = Cow.find(params[:id])
-    binding.pry
     if @cow.update(cow_params)
       redirect_to @cow
     else
@@ -37,7 +38,6 @@ class CowsController < ApplicationController
 
   def destroy
     @cow = Cow.find_by(:id => params[:id])
-    binding.pry
     @cow.destroy
     redirect_to cows_url
   end

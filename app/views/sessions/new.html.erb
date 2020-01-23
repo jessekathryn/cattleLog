@@ -1,15 +1,4 @@
-<% if @user.errors.any? %>
-    <div id="error">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div> 
-  <% end %>
-
-  <p id="notice"><%= notice %></p>
+<%= notice %>
 
 <!-- Navigation -->
 <nav class="navbar navbar-light bg-light static-top">
@@ -32,15 +21,14 @@
 
 <p> <%= form_for @user, url: login_path, method: :post do |f| %></p>
   <input type="username" class="form-control form-control-lg" placeholder="Username" required=""<%= f.text_field :username %>
-  <input type="email" class="form-control form-control-lg" placeholder="Email" required=""<%= f.text_field :email %>
   <input type="password" class="form-control form-control-lg" placeholder="Password" required="" <%= f.password_field :password, :id => "password" %>
-  <%= f.label :admin %>
-  <%= f.check_box :admin %>
-
+  <%= f.label :admin %> <%= f.check_box :admin %>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <label>
   <input type="checkbox" value="remember-me"> Remember me
   </label> 
+  <br>
+  
   <p><%= link_to "Sign In with Github", "/auth/github" %></p>
   </div>
 <% end %>

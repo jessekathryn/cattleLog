@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in?
+  before_action :require_logged_in
 
   def index
-   if !is_admin?
-      render :home
-   else
+  #  if !is_admin?
+  #     render :home
+  #  else
     @users = User.all
   end
-end
+#end
 
   def show
     if !logged_in?
