@@ -21,19 +21,15 @@
 
 <!-- Ruby  -->
 
-  <p>  <%= form_with(model: user, local: true) do |form| %> </p>
+  <p> <%= form_with(model: user, local: true) do |form| %> </p>
   <input class="form-control form-control-lg" placeholder="Username" required="" <%= form.text_field :username %>
   <input class="form-control form-control-lg" placeholder="Email"  required="" <%= form.text_field :email %>
   <input class="form-control form-control-lg" placeholder="Password"  required="" <%= form.password_field :password, :id => "password" %>
+  <%= form.label :admin %>
+  <%= form.check_box :admin %>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   <label>
   <input type="checkbox" value="remember_me"> Remember me  
-  <div class="field">
-  <%= form.check_box :admin %>
-  <%= form.label :admin %>
- 
-</div>
-
   </label> 
 <% end %>
         </div>

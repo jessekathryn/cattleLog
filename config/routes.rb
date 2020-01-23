@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :tools
   resources :reports
 
-
+  get '/auth/:provider/callback', to: 'sessions#create'
+  
   get '/signin' => 'sessions#new', as: '/'
   post '/login' => 'sessions#create', as: 'login'
 

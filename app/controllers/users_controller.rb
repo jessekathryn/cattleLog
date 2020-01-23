@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
    if !is_admin?
       render :home
-    else
+   else
     @users = User.all
   end
 end
@@ -67,6 +67,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_digest, :cows, :fields, :expenses, :tools)
+      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :cows, :fields, :expenses, :tools)
     end
   end

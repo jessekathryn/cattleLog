@@ -29,7 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem "bootstrap_form", "~> 4.0"
 
 gem "omniauth"
-gem "omniauth-google-oauth2"
+
+gem "omniauth-github"
 
 gem 'devise'
 

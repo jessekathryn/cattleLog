@@ -3,12 +3,26 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(username: params[:user][:username])
-    user = user.try(:authenticate, params[:user][:password])
-      return redirect_to(controller: 'sessions', action: 'new') unless user
-      session[:user_id] = user.id
-    @user = user
-    redirect_to @user 
+    if auth_hash = request.env["omniauth.auth"]
+     oauth_email = request.env["omniauth.auth"]["email"]
+      if user = User.find_by(:email => oauth_email)
+        session[:user_id]= user.id
+        else
+          user = User.create(:email => oauth_email)
+          if user.save
+            session[:user_id]= user.id 
+            @user = user
+            redirect_to @user
+        end
+        else   
+          user = User.find_by(username: params[:username])
+          if user = user.try(:authenticate, params[:password])
+            return redirect_to(controller: 'sessions', action: 'new') unless user
+            session[:user_id] = user.id
+            @user = user
+            redirect_to @user 
+        end
+     end
   end
 
   def destroy
