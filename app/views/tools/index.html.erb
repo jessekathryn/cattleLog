@@ -130,6 +130,7 @@
       <h1 class="h2"><%= @user.username.titlecase%>'s Equipment</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Tool', new_tool_path %></button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
@@ -152,7 +153,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @tools.each do |tool| %>
+    <% current_user.tools.each do |tool| %>
       <tr>
         <td><%= tool.name %></td>
         <td><%= tool.id %></td>

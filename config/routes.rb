@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create', as: 'user/home'
 
   get '/signout' => 'welcome#home'
-  post '/signout' => 'sessions#destroy', as: 'logout'                                             
-
+  post '/signout' => 'sessions#destroy', as: 'logout'             
+  
   root 'welcome#home'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
