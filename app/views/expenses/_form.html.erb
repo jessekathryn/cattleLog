@@ -11,11 +11,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
   <%= form.label :cow_id%>
   <%= form.text_field :cow_id %>
   </div>
@@ -92,7 +87,7 @@
 
   <div class="field">
     <%= form.label :repais %>
-    <%= form.number_field :repais %>
+    <%= form.number_field :repairs %>
   </div>
 
   <div class="field">
@@ -156,7 +151,7 @@
   </div>
 
   <div class="field">
-  <%= form.hidden_field :user_id, :value => @user.id %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
 
 <br>

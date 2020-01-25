@@ -20,7 +20,7 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new(report_params)
-
+      @reprt
       if @report.save
         redirect_to @report
       else

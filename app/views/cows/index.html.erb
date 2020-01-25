@@ -172,7 +172,8 @@
     </tr>
   </thead>
   <tbody>
-    <% @cows.each do |cow| %>
+
+    <% current_user.cows.each do |cow| %>
       <tr>
         <td><%= cow.name.titlecase %></td>
         <td><%= cow.tag_number %></td>

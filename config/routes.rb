@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   resources :cows
   resources :users
   resources :tools
-  resources :reports
+  
+  resources :reports do 
+    resources :cows
+  end
+
+  get '/users/:id' => 'users#show'
 
   get '/auth/:provider/callback', to: 'sessions#create'
   
@@ -17,3 +22,5 @@ Rails.application.routes.draw do
   root 'welcome#home'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
+
+  
