@@ -155,7 +155,7 @@
   </thead>
 
   <tbody>
-    <% @fields.each do |field| %>
+    <% current_user.fields.each do |field| %>
       <tr>
         <td><%= field.field_name %></td>
         <td><%= field.acreage %></td>

@@ -168,18 +168,16 @@
   <%= @report.user.cow_ids.size%>
 </p>
 
-<p>
-  <strong>Cows on Report:</strong>
-<% @user.cows.each do |cow| %>
-  <li> <%= cow.name.titlecase %> : <%= cow.cow_status %>, <%= cow.age %> years, </li>
-</p>
+
 
 <p>
   <strong>Field and Cattle details</strong>
-<% @user.fields.each do |field| %>
+<% current_user.fields.each do |field| %>
   <%= field.field_name.titlecase %> (Given Name) is
-  <%= field.acreage %> acres and located at the coordinates (<%= field.latitude %>, <%= field.longitude %>).  This field is currently housing cows:
-  <li> <%= cow.name.titlecase %> </li>
+  <%= field.acreage %> acres and located at the coordinates (<%= field.latitude %>, <%= field.longitude %>). 
+  <% current_user.cows.each do |cow| %>
+    <li> <%= cow.name.titlecase %> : <%= cow.cow_status %>, <%= cow.age %> years, </li>
+  </p>
 <% end %>
 </p>
 

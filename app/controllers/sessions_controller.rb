@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if auth_hash = request.env["omniauth.auth"]
      user = User.find_or_create_by_omniauth(auth_hash)
         session[:user_id] = user.id
-        redirect_to u
+        @user = user
+        redirect_to user
       else
           user = User.find_by(username: params[:user][:username])
           user = user.try(:authenticate, params[:user][:password])

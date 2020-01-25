@@ -151,7 +151,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @reports.each do |report| %>
+    <% current_user.reports.each do |report| %>
       <tr>
         <td><%= report.name %></td>
         <td><%= report.date %></td>

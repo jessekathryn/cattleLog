@@ -20,16 +20,17 @@
       <!-- Ruby  -->
 
 <p> <%= form_for @user, url: login_path, method: :post do |f| %></p>
+  <%= f.label :admin %> <%= f.check_box :admin %>
   <input type="username" class="form-control form-control-lg" placeholder="Username" required=""<%= f.text_field :username %>
   <input type="password" class="form-control form-control-lg" placeholder="Password" required="" <%= f.password_field :password, :id => "password" %>
-  <%= f.label :admin %> <%= f.check_box :admin %>
+ 
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <label>
   <input type="checkbox" value="remember-me"> Remember me
   </label> 
   <br>
-  
-  <p><%= link_to "Sign In with Github", "/auth/github" %></p>
+  <a id="github-button" class="btn btn-block btn-social btn-github" href="/auth/github">
+  <i class="fa fa-github"></i> Sign in with Github</a>
   </div>
 <% end %>
           </div>
