@@ -154,10 +154,15 @@
 
       <img src="https://i.ibb.co/x2gVDMk/download.png" <canvas class="my-4 w-100" id="myChart" width="700" height="380"></canvas>
 
+         
+
       <h2>Reports</h2>
+      
+      <h2><% current_user.reports.created_before(Time.zone.now) %> </h2>   
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
+          
             <tr>
               <th>Id</th>
               <th>Cows</th>
@@ -167,12 +172,17 @@
             </tr>
           </thead>
           <tbody>
+
+@user.reports.created_before(time)
+
+          <% current_user.reports.created_before(time) do |user| %>
             <tr>
-              <td>1,001</td>
-              <td>Lorem</td>
+            <td><%user.created_before(Time.zone.now)%></td> 
+            <%<td>user.cows</td>%>
               <td>ipsum</td>
               <td>dolor</td>
               <td>sit</td>
+          <% end %>
             </tr>
             <tr>
               <td>1,002</td>

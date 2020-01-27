@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     if !is_admin?
-      render home
+      render :home
     else
     @users = User.all
   end
