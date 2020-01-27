@@ -8,4 +8,11 @@ class Report < ApplicationRecord
    where("created_at < ?", time)
   end
 
+  def self.recent
+    recent.ids
+    #redirect_to report_cow_path(recent.last)
+  end
+
+
+
 end
