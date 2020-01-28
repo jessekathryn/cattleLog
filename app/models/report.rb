@@ -19,3 +19,6 @@ class Report < ApplicationRecord
     d.strftime("at %I:%M%p")
   end
 end
+
+
+#report_url(current_user.reports.recent.id)

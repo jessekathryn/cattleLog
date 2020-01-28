@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :cows
   end
 
-  # get '/users/:id' => 'users#show'
-
   get '/auth/:provider/callback', to: 'sessions#create'
   
   get '/signin' => 'sessions#new', as: '/login'

@@ -108,12 +108,12 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" <%= link_to 'Today', report_url(current_user.reports.recent.id) %>
+            <a class="nav-link" <%= link_to 'Today', report_url(current_user.reports) %>
               <span data-feather="file-text"></span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" <%= link_to 'First Report', report_url(current_user.reports.first.id) %>
+            <a class="nav-link" <%= link_to 'First Report', report_url(current_user.reports) %>
               <span data-feather="file-text"></span>
             </a>
           </li>
@@ -124,7 +124,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" <%= link_to 'Recent Report', report_url(current_user.reports.recent.id) %>
+            <a class="nav-link" <%= link_to 'Recent Report', report_url(current_user.reports) %>
               <span data-feather="file-text"></span>
             </a>
           </li>
@@ -144,7 +144,7 @@
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
-            <%= link_to 'Last Report', report_url(current_user.reports.recent.id) %>
+            <%= link_to 'Last Report', report_url(current_user.reports) %>
           </button>
         </div>
       </div>     
@@ -170,7 +170,7 @@
             ]);
     
             var options = {
-              title: '<%= current_user.reports.last.date %>',
+              title: '<%= current_user.reports %>',
               curveType: 'function',
               legend: { position: 'bottom' }
             };
@@ -217,7 +217,7 @@
 </p>
 <p>
    </li><div class="card mb-4">
-    <div class="card-header"><i class="fas fa-table mr-1"></i>Field and Cattle detail as of <%= current_user.reports.last.date%></div>
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Field and Cattle detail as of <%= Time.zone.now.strftime("%m/%d/%Y") %></div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
