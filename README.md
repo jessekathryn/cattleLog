@@ -1,6 +1,27 @@
 # cattle_log
 Rails application for tracking cattle.
 
+# Directions
+Clone into repo 
+
+'git clone repo-cattle_log'
+
+Change into directory
+
+'cd cattle_log'
+
+Download any missing gems needed to run
+
+'bundle install'
+
+Start rails server at Port :3000
+
+'rails s'
+
+Build Your Farm
+
+Create new cows first and then each item on the left side-bar that you wnat in your farm. Generate a report to play with the dashboard.
+
 # Cattle-Log 
 
 Project Description
