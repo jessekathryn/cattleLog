@@ -8,11 +8,14 @@ class Report < ApplicationRecord
    where("created_at < ?", time)
   end
 
+
   def self.recent
-    recent.ids
-    #redirect_to report_cow_path(recent.last)
+    self.last
   end
 
-
-
+  def self.time
+    d = self.created_at
+    d.strftime("Printed on %m/%d/%Y")   
+    d.strftime("at %I:%M%p")
+  end
 end
