@@ -150,6 +150,8 @@
           google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart);
     
+          chartArea:{left:0, top:0, width:'100%',height:'100%'}
+
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
               ['Year', 'Cows', 'Expenses'],
@@ -171,7 +173,7 @@
           }
         </script>
         <div id="curve_chart"></div>
-        <div class="card-body"><canvas id="curve_chart" width="100%" height="50"></canvas></div>
+        <div class="card-body"><canvas id="curve_chart" width="100%" height="50" align="center"></canvas></div>
     </div>
 </div>
 <div class="col-xl-6">
@@ -249,23 +251,20 @@
   <%= field.field_name.titlecase %> Field is
   <%= field.acreage %> acres and located at the coordinates (<%= field.latitude %>, <%= field.longitude %>). 
   <div id="map-container">
-  <div class="col-xl-7">
-    <div class="card mb-4">
+  <div class="col-xl-5">
+    <div class="card mb-5">
         <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Satellite Image</div>
- 
   <iframe
-  width="750"
-  height="550"
-  frameborder="0" style="border:0"
+  width="700"
+  height="700"
+  frameborder="0" style="border:0" image="center"
   src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDyTi3j0kAbYveFAqOA_pc7NLCMWn4HI6k&center=<%= field.latitude %>,<%=field.longitude %>&zoom=18&maptype=satellite"
   <% end %> 
   <br>
-  <br>
-  
-   
+  <br> 
   </iframe>
-    <div id="map-canvas"></div>
-    </br>
+  <div id="map-canvas"></div>
+  </br>
 </div>
 </div>
 </div>  

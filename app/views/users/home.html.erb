@@ -149,12 +149,12 @@
         </div>
       </div>     
     
-      <div class="row">
+<div class="row">
   <div class="col-xl-6">
     <div class="card mb-4">
-        <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Cattle vs. Expenses </div>
+        <div class="card-header"><i class="fas fa-chart-area mr-2"></i>Cattle vs. Expenses </div>
         <div id="curve_chart"></div>
-        <div class="card-body"><canvas id="curve_chart" width="100%" height="50"></canvas></div>
+        <div class="card-body"><canvas id="curve_chart" width="100%" height="70"></canvas></div>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
           google.charts.load('current', {'packages':['corechart']});
@@ -184,9 +184,9 @@
 </div>
 <div class="col-xl-6">
     <div class="card mb-4">
-        <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Field Usage</div>
+        <div class="card-header"><i class="fas fa-chart-bar mr-2"></i>Field Usage</div>
         <div id="donutchart"></div>
-        <div class="card-body"><canvas id="donutchart" width="100%" height="50">class="chartjs-render-monitor"></canvas></div>
+        <div class="card-body"><canvas id="donutchart" width="100%" height="70">class="chartjs-render-monitor"></canvas></div>
         <head>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
@@ -204,7 +204,7 @@
     
             var options = {
               title: 'Field Acreage Use',
-              pieHole: 0.5,
+              pieHole: 1,
             };
     
             var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
