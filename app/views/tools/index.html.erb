@@ -162,7 +162,7 @@
         <td><%= tool.field_id %></td>
         <td><%= link_to 'Show', @tool %></td>
         <td><%= link_to 'Edit', edit_user_path(tool) %></td>
-        <td><%= link_to 'Destroy', tool, method: :destroy %></td>
+        <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
           </tbody>

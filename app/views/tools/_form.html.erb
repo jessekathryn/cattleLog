@@ -142,7 +142,7 @@
         <h1 class="h2"><%= @user.username.titlecase%>'s Tools</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Tool', new_tool_path %></button>
+              <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Tool', new_tool_path %></button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
             </div>
@@ -150,28 +150,18 @@
               <span data-feather="calendar"></span>
               This week
             </button>
-          </div>
         </div>
+    </div>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div> 
    
   <div class="field">
-    <%= form.label :field_id %>
-    <%= form.text_field :field_id %>
-  </div> 
-
-
-
-  <div class="field">
   <%= form.hidden_field :user_id, :value => @user.id %>
-  <%= form.label :Fields_included %>
-  <%= form.collection_check_boxes :field_id, current_user.fields.all, :id, :field_name %>
+  <%= form.label :Fields_for %>
+  <%= form.collection_select :field_id, current_user.fields.all, :id, :field_name %>
   
-  <div class="field">
-  <%= form.hidden_field :user_id, :value => @user.id %>
-
   <div class="field">
     <%= form.hidden_field :user_id, :value => @user.id %>
   </div>
