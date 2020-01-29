@@ -149,8 +149,6 @@
         <script type="text/javascript">
           google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart);
-    
-          chartArea:{left:0, top:0, width:'100%',height:'100%'}
 
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
@@ -225,7 +223,7 @@
                         <th>Cow Tag</th>
                         <th>Cow Age (Years)</th>
                         <th>Notes</th>
-                        <th>Acres</th>
+                        <th>Weight</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -255,16 +253,16 @@
     <div class="card mb-5">
         <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Satellite Image</div>
   <iframe
-  width="700"
-  height="700"
-  frameborder="0" style="border:0" image="center"
+  width="620"
+  height="900"
+  align="center"
+  frameborder="2" style="border:2" 
   src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDyTi3j0kAbYveFAqOA_pc7NLCMWn4HI6k&center=<%= field.latitude %>,<%=field.longitude %>&zoom=18&maptype=satellite"
   <% end %> 
-  <br>
-  <br> 
   </iframe>
-  <div id="map-canvas"></div>
-  </br>
+  <div id="map-canvas" align="center"></div>
+  <br>
+ 
 </div>
 </div>
 </div>  

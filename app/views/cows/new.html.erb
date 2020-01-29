@@ -67,7 +67,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/equipments">
+            <a class="nav-link" href="/tools">
               <span data-feather="shopping-cart"></span><img src="https://i.ibb.co/QJvmTng/noun-Tractor-1192.png" width="25" height="25">
               Equipment
             </a>
@@ -139,17 +139,16 @@
       <h1 class="h2"><%= current_user.username.titlecase%>'s New Cow</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-
-          <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Cow', new_cow_path %></button>
+            <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Cow', new_cow_path %></button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
+          <span data-feather="calendar"></span>
             This week
-          </button>
-        </div>
+        </button>
       </div>
+    </div>
 
-      <%= render 'form', cow: @cow %>
+    <%= render 'form', cow: @cow %>
 
