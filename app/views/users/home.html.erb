@@ -44,8 +44,12 @@
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" <img class="img-responsive"<a href="/"><img src="https://i.ibb.co/MnKzJwC/cow-background-300.png" alt="cow-background-300" width="70" height="70"> <href="/"> Cattlelog </a> 
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" <img class="img-responsive"<a href="/"><img src="https://i.ibb.co/MnKzJwC/cow-background-300.png" alt="cow-background-300" width="70" height="70"> <href="/"> Cattlelog </a> 
+    <%= form_tag(search_page_path, :method => "get") do %>  
+    <%= params[:search]  %><input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <% end %>
+    </div>  
+  </div>  
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="/signout">Sign out</a>
@@ -144,7 +148,7 @@
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
-            <%= link_to 'Last Report', report_url(current_user.reports) %>
+              Recent Report
           </button>
         </div>
       </div>     
