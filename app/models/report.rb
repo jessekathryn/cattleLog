@@ -20,5 +20,9 @@ class Report < ApplicationRecord
   end
 end
 
+#use join table in all others and submit through report form
+#has many through and see
+
+
 
 #report_url(current_user.reports.recent.id)

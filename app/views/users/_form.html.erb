@@ -16,10 +16,10 @@
   <% end %>
   <div class="col-xl-9 mx-auto">
   <p> <%= form_with(model: user, local: true) do |form| %> </p>
-  <input class="form-control form-control-lg" placeholder="Username" required=""<%= form.text_field :username%>
-  <input class="form-control form-control-lg" placeholder="Email"  required="" <%= form.text_field :email %>
-  <input class="form-control form-control-lg" placeholder="Password"  required="" <%= form.password_field :password, :id => "password" %>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+  <%= form.text_field :username, class: "form-control form-control-lg", placeholder: "Username", required: "" %>
+  <%= form.text_field :email,  placeholder: "Email",  required: "", class: "form-control form-control-lg"%> </>
+  <%= form.password_field :password, :id => "password", class: "form-control form-control-lg", placeholder: "Password",  required:""%>
+  <%= form.submit :submit, class: "btn btn-lg btn-primary btn-block", type: "submit", placeholder: "Sign Up" %>
   <label>
   <input type="checkbox" value="remember_me"> Remember me  
   </label> 

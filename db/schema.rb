@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.integer "chemicals"
     t.integer "conservation"
     t.integer "depreciation"
-    t.integer "employees"
     t.integer "feed"
     t.integer "freight"
     t.integer "gas"
