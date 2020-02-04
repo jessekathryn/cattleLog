@@ -13,6 +13,126 @@
   
   <!-- Custom styles for this template -->
   <link href="https://blackrockdigital.github.io/startbootstrap-landing-page/css/landing-page.css" rel="stylesheet">
+  <p id="notice"><%= notice %></p>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.4/examples/dashboard/dashboard.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="dashboard.css" rel="stylesheet">
+
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" <img class="img-responsive"<a href="/"><img src="https://i.ibb.co/MnKzJwC/cow-background-300.png" alt="cow-background-300" width="70" height="70"> <href="/"> Cattlelog </a> 
+  <%= form_tag(search_page_path, :method => "get") do %>  
+  <%= params[:search]  %><input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <% end %>
+  </div>  
+</div>  
+<ul class="navbar-nav px-3">
+  <li class="nav-item text-nowrap">
+    <a class="nav-link" href="/signout">Sign out</a>
+  </li>
+</ul>
+</nav>
+
+<!------ SIDE BAR START ------->
+<div class="container-fluid">
+<div class="row">
+  <nav class="col-md-2 d-none d-md-block bg-light pt-5 sidebar">
+    <div class="sidebar-sticky pt-4">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="/users/id">
+          <span data-feather="home"></span><img src="https://i.ibb.co/LktdsBP/home-icon.png" width="20" height="20"> My Farm <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/:user_id/cows">
+            <span data-feather="file"></span><img src="https://i.ibb.co/C6TgVJJ/cow-copy.png" width="25" height="25"> Cows
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tools/">
+            <span data-feather="shopping-cart"></span><img src="https://i.ibb.co/QJvmTng/noun-Tractor-1192.png" width="25" height="25">
+            Equipment
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/fields">
+            <span data-feather="users"></span><img src="https://i.ibb.co/Q88xYfd/Monitor.png" width="25" height="25">
+            Fields
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reports">
+            <span data-feather="bar-chart-2"><img src="https://i.ibb.co/HXW6F3Z/Graph.png" width="25" height="25"></span>
+            Reports
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/expenses">
+            <span data-feather="layers"><img src="https://i.ibb.co/0MzxB8g/Money.png" width="25" height="25"> </span>
+            Expenses
+          </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/users">
+          <span data-feather="layers"><img src="https://i.ibb.co/X3Hmrtq/Clipboard.png" width="25" height="25"> </span>
+          Administrator
+          </a>
+        </li>
+      </ul>
+
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span>Saved reports</span>
+        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+          <span data-feather="plus-circle"></span>
+        </a>
+      </h6>
+      <ul class="nav flex-column mb-2">
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to 'Today' %>
+            <span data-feather="file-text"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to 'First Report' %>
+            <span data-feather="file-text"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reports/">
+            <span data-feather="file-text"></span>
+            Current Week
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reports/">
+            All
+            <span data-feather="file-text"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!------ SIDE BAR END ------->
+  
   </head>
   <body>
   

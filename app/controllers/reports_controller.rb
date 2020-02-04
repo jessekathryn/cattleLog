@@ -2,11 +2,9 @@ class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
 
-
   def index
     @reports = Report.all
   end
-
 
   def show
   end
@@ -35,7 +33,6 @@ class ReportsController < ApplicationController
         render :edit 
       end
   end
-
 
   def destroy
     @report.destroy

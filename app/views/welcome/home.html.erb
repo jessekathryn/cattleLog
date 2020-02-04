@@ -1,11 +1,34 @@
-<!-- Navigation -->
-<nav class="navbar navbar-light bg-light static-top">
-  <div class="container">
-    <a class="navbar-brand" href="/">Cattlelog</a>
-    <a class="btn btn-primary" href="/signin">Sign In</a> 
-  </div>
-</nav>
+<!DOCTYPE html>
+  <html>
+  <head>
 
+  <%= javascript_include_tag 'rails-ujs' %>
+  <%= csrf_meta_tag %>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Cattlelog</title>
+
+  <!-- Bootstrap core CSS --> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+  <!-- Custom styles for this template -->
+  <link href="https://blackrockdigital.github.io/startbootstrap-landing-page/css/landing-page.css" rel="stylesheet">
+ 
+  <!-- Custom styles for this template -->
+  <link href="dashboard.css">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Cattlelog</a>
+      <a class="btn btn-primary" href="/signin">Sign In</a> 
+    </div>
+  </nav>
+</head>
+<body>
 <section class="call-to-action text-white text-center" style="background-image: url('https://i.ibb.co/d0YkNvJ/background2.png');">
   <div class="container">
     <div class="row">
@@ -28,7 +51,6 @@
     </div>
   </div>
 </section>
-
 <!-- Icons Grid -->
 <section class="features-icons bg-light text-center" >
   <div class="container">
@@ -90,7 +112,33 @@
     </div>
   </div>
 </section>
+</div>
+<footer>
+<footer class="footer mt-auto py-3">
+<div class="container" align="center">
+<ul class="list-inline mb-3">
+        <li class="list-inline-item">
+          <a href="/signin">Sign In</a>
+        </li>
+        <li class="list-inline-item">&sdot;</li>
+        <li class="list-inline-item">
+          <a href="/">About</a>
+        </li>
+        <li class="list-inline-item">&sdot;</li>
+        <li class="list-inline-item">
+          <a href="/users/new">Join</a>
+        </li>
+        <li class="list-inline-item">&sdot;</li>
+        <li class="list-inline-item">
+          <a href="#">Privacy Policy</a>
+        </li>
+      </ul>
+  <span class="text-muted">&copy; Cattlelog 2019. All Rights Reserved.</span>
+</div>
+</footer>
 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
 
 
 

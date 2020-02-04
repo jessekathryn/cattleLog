@@ -14,7 +14,7 @@ class CreateExpenses < ActiveRecord::Migration[6.0]
       t.integer :interest
       t.integer :mortgage
       t.integer :rent
-      t.integer :repais
+      t.integer :repairs
       t.integer :seeds
       t.integer :storage
       t.integer :supplies

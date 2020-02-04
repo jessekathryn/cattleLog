@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  resources :expenses
-  resources :fields
-  resources :cows
-  resources :users
-  resources :tools
-  resources :pages
-  
-  resources :reports do 
+  resources :sessions
+
+  resources :users do 
+    resources :expenses
+    resources :fields
     resources :cows
+    resources :tools
+    resources :pages
   end
 
   get '/auth/:provider/callback', to: 'sessions#create'
