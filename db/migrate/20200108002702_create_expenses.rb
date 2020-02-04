@@ -27,10 +27,10 @@ class CreateExpenses < ActiveRecord::Migration[6.0]
       t.integer :misc_labor
       t.integer :professional_fees
       t.integer :user_id
-      t.integer :field_id
-      t.integer :cow_id
-      t.integer :report_id
-      t.integer :tool_id
+      # t.integer :field_id
+      # t.integer :cow_id
+      # t.integer :report_id
+      # t.integer :tool_id
 
       t.timestamps
     end

@@ -1,5 +1,7 @@
 class Report < ApplicationRecord
-    belongs_to :user
+  belongs_to :userable, :polymorphic => true
+  has_many :users 
+  # belongs_to :user
 
   scope :created, -> { where(created: true) }
   scope :created_before, ->(time) { where("created_at < ?", time) }

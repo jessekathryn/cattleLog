@@ -1,12 +1,12 @@
 class User < ApplicationRecord
     has_secure_password
-
-    has_many :cows
-    has_many :fields
-    has_many :tools
-    has_many :expenses
+    belongs_to :reports
+    # has_many :cows
+    # has_many :fields
+    # has_many :tools
+    # has_many :expenses
     
-    has_many :reports
+    # has_many :reports
 
     validates :email, uniqueness: true
     #validates :username, uniqueness: true

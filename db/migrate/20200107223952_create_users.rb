@@ -5,11 +5,11 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :email
       t.string :password_digest
-      t.string :cows
-      t.string :fields
-      t.string :expenses
-      t.string :tools
-      t.string :reports
+      # t.string :cows
+      # t.string :fields
+      # t.string :expenses
+      # t.string :tools
+      # t.string :reports
       t.boolean "admin", default: false 
 
       t.timestamps

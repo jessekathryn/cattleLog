@@ -4,8 +4,8 @@ class CreateTools < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :price
       t.integer :user_id
-      t.integer :field_id
-      t.integer :cow_id
+      # t.integer :field_id
+      # t.integer :cow_id
       
       t.timestamps
     end

@@ -7,9 +7,9 @@ class CreateFields < ActiveRecord::Migration[6.0]
       t.string :latitude
       t.string :longitude
       t.integer :user_id
-      t.integer :cow_id
-      t.integer :expense_id
-      t.integer :tool_id
+      # t.integer :cow_id
+      # t.integer :expense_id
+      # t.integer :tool_id
 
       t.timestamps
     end
