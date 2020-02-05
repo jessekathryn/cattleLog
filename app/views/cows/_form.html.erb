@@ -3,7 +3,7 @@
     <h1 class="h2"><%= @user.username.titlecase%>'s Herd</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Cow', new_cow_path %></button>
+        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Cow', new_user_cow_path(@user)%></button>
         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
         <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
       </div>
@@ -13,8 +13,7 @@
       </button>
     </div>
   </div>
-  <%= form_with(model: cow, local: true) do |form| %>
-   <%= form.hidden_field :cow_id, :value => :id %> 
+  <%= form_for(@cow) do |form| %>
     <div class="field">
       <%= form.label :name %>
       <%= form.text_field :name %>
@@ -25,7 +24,7 @@
     </div>
     <div class="field">
       Cow Status
-      <select name="cow[][cow_status]" id="cow_status">
+      <select name="cow[][status]" id="status">
         <option value="steer">steer</option>
         <option value="calf">calf</option>
         <option value="heifer">heifer</option>
@@ -37,8 +36,12 @@
       <%= form.number_field :age %>
     </div>
     <div class="field">
-      <%= form.label :birthyear %>
-      <%= form.number_field :birthdate %>
+      <%= form.label :days %>
+      <%= form.number_field :days %>
+    </div>
+    <div class="field">
+      <%= form.label :birthdate %>
+      <%= form.date_field :birthdate %>
     </div>
     <div class="field">
       <%= form.label :weight %>
@@ -59,9 +62,25 @@
       <%= form.label :notes %>
       <%= form.text_field :notes %>
     </div>
+     <div class="field">
+      <%= form.label :shots %>
+      <%= form.text_field :shots %>
+    </div>
+    <div class="field">
+      <%= form.label :history %>
+      <%= form.text_field :history %>
+    </div>
     <div class="field">
       <%= form.label :field_name %>
       <%= form.text_field :field_name %>
+    </div>
+    <div class="field">
+      Pregnancy
+      <select name="cow[][pregnant]" id="pregnant">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        <option value="not sure">Unsure</option>
+      </select>
     </div>
     <br>
     <div class="actions">

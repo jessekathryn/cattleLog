@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-tools = Tool.create([{ name: 'tractor' }, { name: 'combine' }])
+Cow.destroy_all
 
-user = User.create([{ username: 'jessebarnes'}, { email: 'jessekathrynbarnes@gmail.com'}, { password: 'jimmy1'}])
+Cow1 = Cow.create(name: "Stephen King", notes: "Romance", history: "Writes a lot of scary things.")
+Cow2 = Cow.create(name: "Ariana Huffington", notes: "Comedy", history: "Up and comer. One to watch.")
+Cow3 = Cow.create(name: "Horse Ebooks", notes: "?????", history: "Eclectic.")
 
-cow = Cow.create([{ name: 'Missy' }])
+User1 = User.create(name: "Mario", username: "mario_n_peach", password: "jimmy1", email: "super_mario100@gmail.com")

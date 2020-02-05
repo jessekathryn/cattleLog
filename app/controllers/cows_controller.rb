@@ -3,32 +3,46 @@ class CowsController < ApplicationController
   before_action :logged_in?
 
   def index
-    binding.pry
-      @cows = Cow.all
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      if @user.nil?
+        redirect_to users_path, notice: "user not found"
+      else
+        @cows = @user.cows
+      end
+    else
+    @cows = Cow.all
   end
+end 
 
   def show
-    @cow = Cow.find(params[:id])
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      @cow = @user.cows.find_by(id: params[:id])
+      if @cow.nil?
+        redirect_to user_cows_path(@user), notice: "cow not found"
+      end
+      else
+        @cow = Cow.find(params[:id])
+    end
   end
 
   def new
-    @cows = Cow.new(params[:id])
+    @cow = Cow.new
   end
 
   def edit
   end
 
   def create
-    if logged_in?
-      @cow = Cow.new(cow_params)
+    binding.pry
+    @cow = Cow.new(cow_params)
       if @cow.save
         redirect_to @cow
       else
         render :new
-      end
     end
   end
-  
 
   def update
     @cow = Cow.find(params[:id])
@@ -51,6 +65,7 @@ class CowsController < ApplicationController
     end
 
     def cow_params
-      params.require(:cow).permit(:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes, :field_name, :field_id)
-    end
-end
+      params.require(:cows).permit(:name, :tag_number, :status, :age, :days, :birthdate, :weight, :health, :color, :user_id, :notes, :shots, :history, :field_name, :pregnant, :calving_date, :pregnancy_date)
+    end       
+        
+  end

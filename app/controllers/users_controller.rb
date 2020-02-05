@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 end
 
   def show
-    if !logged_in?
+    if !logged_in? 
       redirect_to '/'
     else
       render :home
@@ -67,6 +67,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :cows, :fields, :expenses, :tools, :admin, :reports)
+      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :admin)
     end
   end

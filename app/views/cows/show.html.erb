@@ -34,7 +34,7 @@
   </thead>
   <tbody>
     <% current_user.cows.each do |cow| %>
-                        <td><%= cow.name.titlecase %> </td>
+                        <td><%= cow.name %> </td>
                         <td><%= cow.tag_number %> </td>  
                         <td><%= cow.cow_status %></td>
                         <td><%= cow.age %></td>

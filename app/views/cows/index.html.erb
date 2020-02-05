@@ -4,7 +4,7 @@
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
 
-          <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Cow', new_cow_path %></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Cow', new_user_cow_path(@user) %></button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
@@ -35,7 +35,7 @@
   <tbody>
      <% current_user.cows.each do |cow| %>
       <tr>
-        <td><%= cow.name.titlecase %></td>
+        <td><%= cow.name %></td>
         <td><%= cow.tag_number %></td>
         <td><%= cow.cow_status %></td>
         <td><%= cow.age %></td>
