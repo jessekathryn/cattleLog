@@ -10,16 +10,6 @@ class User < ApplicationRecord
 
     accepts_nested_attributes_for :cows
 
-
-    def cow_name
-        self.try(:cow).try(:name)
-    end
-
-    def cow_name=(name)
-        cow = Cow.find_or_create_by(name: name)
-        self.cow = cow
-    end
-
     validates :email, uniqueness: true
     validates :username, length: { minimum: 2, message: "Must be 2 characters long." }
     validates :password, length: { in: 6..20, message: "Must be 6-20 characters long." }
