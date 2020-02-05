@@ -13,7 +13,7 @@
       </button>
     </div>
   </div>
-  <%= form_for(@cow) do |form| %>
+ <%= form_with(model: @cow, local: true) do |form| %>
     <div class="field">
       <%= form.label :name %>
       <%= form.text_field :name %>
@@ -21,15 +21,6 @@
     <div class="field">
       <%= form.label :tag_number %>
       <%= form.number_field :tag_number %>
-    </div>
-    <div class="field">
-      Cow Status
-      <select name="cow[][status]" id="status">
-        <option value="steer">steer</option>
-        <option value="calf">calf</option>
-        <option value="heifer">heifer</option>
-        <option value="bull">bull</option>
-      </select>
     </div>
     <div class="field">
       <%= form.label :age %>
@@ -73,14 +64,6 @@
     <div class="field">
       <%= form.label :field_name %>
       <%= form.text_field :field_name %>
-    </div>
-    <div class="field">
-      Pregnancy
-      <select name="cow[][pregnant]" id="pregnant">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        <option value="not sure">Unsure</option>
-      </select>
     </div>
     <br>
     <div class="actions">

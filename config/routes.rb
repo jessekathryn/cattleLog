@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :cows, only: [:create, :edit, :update]
+  resources :cows
 
   resources :users do 
     resources :cows, only: [:show, :index, :new]

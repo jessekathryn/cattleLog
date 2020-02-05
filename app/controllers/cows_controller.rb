@@ -35,7 +35,6 @@ end
   end
 
   def create
-    binding.pry
     @cow = Cow.new(cow_params)
       if @cow.save
         redirect_to @cow
@@ -65,7 +64,7 @@ end
     end
 
     def cow_params
-      params.require(:cows).permit(:name, :tag_number, :status, :age, :days, :birthdate, :weight, :health, :color, :user_id, :notes, :shots, :history, :field_name, :pregnant, :calving_date, :pregnancy_date)
+      params.require(:cow).permit(:name, :tag_number, :status, :age, :days, :birthdate, :weight, :health, :color, :user_id, :notes, :shots, :history, :field_name, :pregnant, :calving_date, :pregnancy_date)
     end       
         
   end
