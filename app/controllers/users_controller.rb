@@ -67,6 +67,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :admin, :cows_attributes[] )
+      params.require(:user).permit(:auth_hash, :username, :email, :password, :admin)
     end
   end
