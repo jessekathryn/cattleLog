@@ -10,4 +10,4 @@ tools = Tool.create([{ name: 'tractor' }, { name: 'combine' }])
 
 user = User.create([{ username: 'jessebarnes'}, { email: 'jessekathrynbarnes@gmail.com'}, { password: 'jimmy1'}])
 
-cows = Cows.create([{ name: 'Missy' }])
+cow = Cow.create([{ name: 'Missy' }])

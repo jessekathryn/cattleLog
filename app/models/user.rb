@@ -7,8 +7,6 @@ class User < ApplicationRecord
     has_many :tools
     has_many :pages
     has_many :reports, :as => :reportable
-    
-    accepts_nested_attributes_for :cows, :fields
 
     validates :email, uniqueness: true
     validates :username, length: { minimum: 2, message: "Must be 2 characters long." }

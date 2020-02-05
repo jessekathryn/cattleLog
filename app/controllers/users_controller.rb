@@ -31,8 +31,6 @@ end
   end
 end
 
-  
-
   def create
     @user = User.new(user_params)
     respond_to do |format|
@@ -69,6 +67,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :fields, :expenses, :tools, :admin, :reports, :cows_attributes => [:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes])
+      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :cows, :fields, :expenses, :tools, :admin, :reports)
     end
   end

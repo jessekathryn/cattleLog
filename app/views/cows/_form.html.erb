@@ -14,7 +14,7 @@
     </div>
   </div>
   <%= form_with(model: cow, local: true) do |form| %>
-   <%= form.hidden_field :cow_id, :value => @cow.id %> 
+   <%= form.hidden_field :cow_id, :value => :id %> 
     <div class="field">
       <%= form.label :name %>
       <%= form.text_field :name %>
