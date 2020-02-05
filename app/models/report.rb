@@ -1,7 +1,5 @@
 class Report < ApplicationRecord
-  belongs_to :userable, :polymorphic => true
-  has_many :users 
-  # belongs_to :user
+  belongs_to :reportable, :polymorphic => true, optional: true
 
   scope :created, -> { where(created: true) }
   scope :created_before, ->(time) { where("created_at < ?", time) }
@@ -9,7 +7,6 @@ class Report < ApplicationRecord
   def self.created_before(time)
    where("created_at < ?", time)
   end
-
 
   def self.recent
     self.last
@@ -21,10 +18,3 @@ class Report < ApplicationRecord
     d.strftime("at %I:%M%p")
   end
 end
-
-#use join table in all others and submit through report form
-#has many through and see
-
-
-
-#report_url(current_user.reports.recent.id)

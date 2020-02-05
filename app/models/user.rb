@@ -1,15 +1,16 @@
 class User < ApplicationRecord
     has_secure_password
-    belongs_to :reports
-    # has_many :cows
-    # has_many :fields
-    # has_many :tools
-    # has_many :expenses
+   
+    has_many :cows
+    has_many :fields
+    has_many :expenses
+    has_many :tools
+    has_many :pages
+    has_many :reports, :as => :reportable
     
-    # has_many :reports
+    accepts_nested_attributes_for :cows, :fields
 
     validates :email, uniqueness: true
-    #validates :username, uniqueness: true
     validates :username, length: { minimum: 2, message: "Must be 2 characters long." }
     validates :password, length: { in: 6..20, message: "Must be 6-20 characters long." }
 

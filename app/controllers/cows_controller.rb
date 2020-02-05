@@ -3,14 +3,19 @@ class CowsController < ApplicationController
   before_action :logged_in?
 
   def index
-    @cows = Cow.all
+      @cows = Cow.all
   end
 
   def show
+    @cow = Cow.find(params[:id])
   end
 
   def new
-    @cow = Cow.new
+    if params[:user_id]
+      @cows = User.find(params[:user_id]).cows
+    else
+      @cows = Cow.new
+    end
   end
 
   def edit
@@ -18,12 +23,11 @@ class CowsController < ApplicationController
 
   def create
     if logged_in?
-    @cow = Cow.new(cow_params)
-    if @cow.save
-      redirect_to @cow
+      @cow = Cow.new(cow_params)
+      @cow.save
+      redirect_to cow_path(@cow)
     else
       render :new
-    end
     end
   end
 

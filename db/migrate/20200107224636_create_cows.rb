@@ -3,18 +3,21 @@ class CreateCows < ActiveRecord::Migration[6.0]
     create_table :cows do |t|
       t.string :name
       t.integer :tag_number
-      t.string :cow_status
+      t.string :status
       t.integer :age
-      t.integer :birthdate
+      t.integer :days
+      t.date :birthdate
       t.integer :weight
       t.string :health
       t.string :color
       t.integer :user_id
       t.string :notes
+      t.string :shots
+      t.string :history
       t.string :field_name
-      # t.integer :field_id
-      # t.integer :expense_id
-      # t.integer :report_id
+      t.boolean "pregnant", default: false 
+      t.date :calving_date
+      t.string :pregnancy_method
 
       t.timestamps
     end

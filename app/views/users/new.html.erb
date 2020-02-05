@@ -1,10 +1,1 @@
-<!-- Navigation -->
-<nav class="navbar navbar-light bg-light static-top">
-  <div class="container">
-    <a class="navbar-brand" href="/">Cattlelog</a>
-    <a class="btn btn-primary" href="/signin">Sign In</a>
-  </div>
-</nav>
-
-<%= render 'form', user: @user %>
-
+<%= render 'form', user: @user, :layout => 'new_users' %>

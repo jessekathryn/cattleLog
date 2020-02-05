@@ -2,7 +2,6 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
 
-
   def index
     @expenses = Expense.all
   end

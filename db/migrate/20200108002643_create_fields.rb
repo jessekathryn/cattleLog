@@ -1,16 +1,15 @@
 class CreateFields < ActiveRecord::Migration[6.0]
   def change
     create_table :fields do |t|
-      t.string :field_name
+      t.string :name
+      t.string :description
       t.integer :acreage
       t.string :crop
+      t.float :moisture
       t.string :latitude
       t.string :longitude
-      t.integer :user_id
-      # t.integer :cow_id
-      # t.integer :expense_id
-      # t.integer :tool_id
-
+      t.integer :bushel 
+      t.integer :crop_weight_lb
       t.timestamps
     end
   end

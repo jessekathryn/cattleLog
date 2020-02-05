@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:new, :show, :edit, :update, :destroy]
-  before_action :require_logged_in, only: [:show, :edit, :update, :destroy, index]
-
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_logged_in, except: [:new, :create]
+  
   def index
     if !is_admin?
       render :home
@@ -20,6 +20,7 @@ end
 
   def new
     @user = User.new
+    render :layout => false
   end
 
   def edit
@@ -29,6 +30,8 @@ end
       render :edit
   end
 end
+
+  
 
   def create
     @user = User.new(user_params)
@@ -52,8 +55,6 @@ end
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user = User.find_by(params[:id])
     @user.destroy
@@ -68,6 +69,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :cows, :fields, :expenses, :tools, :admin, :reports)
+      params.require(:user).permit(:auth_hash, :username, :email, :password, :password_digest, :fields, :expenses, :tools, :admin, :reports, :cows_attributes => [:id, :name, :tag_number, :cow_status, :age, :birthdate, :weight, :health, :color, :user_id, :notes])
     end
   end

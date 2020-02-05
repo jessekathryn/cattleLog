@@ -2,11 +2,9 @@ class FieldsController < ApplicationController
   before_action :set_field, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
 
-
   def index
     @fields = Field.all
   end
-
 
   def show
   end

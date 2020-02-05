@@ -15,21 +15,29 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
   create_table "cows", force: :cascade do |t|
     t.string "name"
     t.integer "tag_number"
-    t.string "cow_status"
+    t.string "status"
     t.integer "age"
-    t.integer "birthdate"
+    t.integer "days"
+    t.date "birthdate"
     t.integer "weight"
     t.string "health"
     t.string "color"
     t.integer "user_id"
     t.string "notes"
+    t.string "shots"
+    t.string "history"
     t.string "field_name"
+    t.boolean "pregnant", default: false
+    t.date "calving_date"
+    t.string "pregnancy_method"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "expenses", force: :cascade do |t|
-    t.string "expense_name"
+    t.string "name"
+    t.date "date"
+    t.string "description"
     t.integer "truck"
     t.integer "chemicals"
     t.integer "conservation"
@@ -49,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.integer "taxes"
     t.integer "vet"
     t.integer "tools"
-    t.integer "fencing_land"
+    t.integer "fencing"
     t.integer "calf"
     t.integer "dues"
     t.integer "misc_labor"
@@ -60,12 +68,15 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
   end
 
   create_table "fields", force: :cascade do |t|
-    t.string "field_name"
+    t.string "name"
+    t.string "description"
     t.integer "acreage"
     t.string "crop"
+    t.float "moisture"
     t.string "latitude"
     t.string "longitude"
-    t.integer "user_id"
+    t.integer "bushel"
+    t.integer "crop_weight_lb"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -75,14 +86,19 @@ ActiveRecord::Schema.define(version: 2020_01_20_214427) do
     t.string "date"
     t.integer "user_id"
     t.string "content"
+    t.string "reportable_type"
+    t.integer "reportable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["reportable_type", "reportable_id"], name: "index_reports_on_reportable_type_and_reportable_id"
   end
 
   create_table "tools", force: :cascade do |t|
     t.string "name"
     t.string "price"
     t.integer "user_id"
+    t.date "tune_up"
+    t.integer "fuel"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

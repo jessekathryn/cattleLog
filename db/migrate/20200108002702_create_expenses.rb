@@ -1,7 +1,9 @@
 class CreateExpenses < ActiveRecord::Migration[6.0]
   def change
     create_table :expenses do |t|
-      t.string :expense_name
+      t.string :name
+      t.date :date
+      t.string :description
       t.integer :truck
       t.integer :chemicals
       t.integer :conservation
@@ -21,17 +23,12 @@ class CreateExpenses < ActiveRecord::Migration[6.0]
       t.integer :taxes
       t.integer :vet
       t.integer :tools
-      t.integer :fencing_land
+      t.integer :fencing
       t.integer :calf
       t.integer :dues
       t.integer :misc_labor
       t.integer :professional_fees
       t.integer :user_id
-      # t.integer :field_id
-      # t.integer :cow_id
-      # t.integer :report_id
-      # t.integer :tool_id
-
       t.timestamps
     end
   end

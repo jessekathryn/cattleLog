@@ -4,11 +4,8 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :date
       t.integer :user_id
-      # t.integer :field_id
-      # t.integer :cow_id
-      # t.integer :expense_id
       t.string :content
-
+      t.references :reportable, polymorphic: true
       t.timestamps
     end
   end
