@@ -33,8 +33,8 @@
             <td><%= tool.tune_up %></td>
             <td><%= tool.field_ids %></td>
             <td><%= tool.fuel %></td>
-            <td><%= link_to 'Show', tool_path(@user) %></td>
-            <td><%= link_to 'Edit', edit_user_path(@user) %></td>
+            <td><%= link_to 'Show', tool %></td>
+            <td><%= link_to 'Edit', edit_user_path(tool) %></td>
             <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
