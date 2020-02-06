@@ -11,6 +11,6 @@ class PagesController < ActionController::Base
   end
 
   def show
-    
   end
-end
+  
+  end

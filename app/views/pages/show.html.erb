@@ -1,16 +1,164 @@
- <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3 border-bottom"> 
-      <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-          </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-              Recent Report
-          </button>
-        </div>
-      </div>   
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= javascript_include_tag 'rails-ujs' %>
+    <%= csrf_meta_tag %>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cattlelog</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-landing-page/css/landing-page.css" rel="stylesheet">
+    <p id="notice"><%= notice %></p>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.4/examples/dashboard/dashboard.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" <img class="img-responsive"<a href="/"><img src="https://i.ibb.co/MnKzJwC/cow-background-300.png" alt="cow-background-300" width="70" height="70"> <href="/"> Cattlelog </a>
+        <%= form_tag(search_page_path, :method => "get") do %>
+          <%= params[:search]  %><input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <% end %>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="/signout">Sign out</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!------ SIDE BAR START ------->
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light pt-5 sidebar">
+        <div class="sidebar-sticky pt-4">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= %>">
+                <span data-feather="home"></span><img src="https://i.ibb.co/LktdsBP/home-icon.png" width="20" height="20"> My Farm <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= %>/cows">
+                <span data-feather="file"></span><img src="https://i.ibb.co/C6TgVJJ/cow-copy.png" width="25" height="25"> Cows
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= %>/tools/">
+                <span data-feather="shopping-cart"></span><img src="https://i.ibb.co/QJvmTng/noun-Tractor-1192.png" width="25" height="25">
+                Equipment
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= %>/fields">
+                <span data-feather="users"></span><img src="https://i.ibb.co/Q88xYfd/Monitor.png" width="25" height="25">
+                Fields
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= %>/reports">
+                <span data-feather="bar-chart-2"><img src="https://i.ibb.co/HXW6F3Z/Graph.png" width="25" height="25"></span>
+                Reports
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= %>/expenses">
+                <span data-feather="layers"><img src="https://i.ibb.co/0MzxB8g/Money.png" width="25" height="25"> </span>
+                Expenses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users">
+                <span data-feather="layers"><img src="https://i.ibb.co/X3Hmrtq/Clipboard.png" width="25" height="25"> </span>
+                Administrator
+              </a>
+            </li>
+          </ul>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Saved reports</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="pages/weather"
+            <span data-feather="file-text"></span>
+              Weather
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" <%= link_to 'First Report' %>
+            <span data-feather="file-text"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reports/">
+            <span data-feather="file-text"></span>
+            Current Week
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reports/">
+            All
+            <span data-feather="file-text"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!------ SIDE BAR END ------->
+</head>
+<body>
 <a class="styles__maplink__1SoBQ" href="/weather/radar/interactive/l/cf5e5822fbdc4793e115795dc824f500c649a39797b6f5cef6931fe900054159?layer=radar" data-from-string="map_card" data-track-string="todaymap" aria-label="Radar" classname="styles__maplink__1SoBQ"></a>
+
+</body>
+<!------ FOOTER ------->
+<footer class="footer mt-auto py-3">
+  <div class="container" align="center">
+    <ul class="list-inline mb-3">
+      <li class="list-inline-item">
+        <a href="/signin">Sign In</a>
+      </li>
+      <li class="list-inline-item">&sdot;</li>
+      <li class="list-inline-item">
+        <a href="/">About</a>
+      </li>
+      <li class="list-inline-item">&sdot;</li>
+      <li class="list-inline-item">
+        <a href="/users/new">Join</a>
+      </li>
+      <li class="list-inline-item">&sdot;</li>
+      <li class="list-inline-item">
+        <a href="#">Privacy Policy</a>
+      </li>
+    </ul>
+    <span class="text-muted">&copy; Cattlelog 2019. All Rights Reserved.</span>
+  </div>
+</footer>
+<!------ BOOTSTRAP JAVASCRIPT ------->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')
+</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
+</html>
+
+
