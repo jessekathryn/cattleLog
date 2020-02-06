@@ -3,7 +3,7 @@
     <h1 class="h2"><%= @user.username.titlecase%>'s Equipment</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Tool', new_tool_path %></button>
+        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Tool', new_user_tool_path %></button>
         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
         <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
       </div>
@@ -18,9 +18,10 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>ID</th>
-          <th>User</th>
-          <th>Field</th>
+          <th>Price</th>
+          <th>Tune Up Date</th>
+          <th>Field ID</th>
+          <th>Fuel Level</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -28,9 +29,10 @@
         <% current_user.tools.each do |tool| %>
           <tr>
             <td><%= tool.name %></td>
-            <td><%= tool.id %></td>
-            <td><%= tool.user_id %></td>
+            <td><%= tool.price %></td>
+            <td><%= tool.tune_up %></td>
             <td><%= tool.field_ids %></td>
+            <td><%= tool.fuel %></td>
             <td><%= link_to 'Show', tool_path(@user) %></td>
             <td><%= link_to 'Edit', edit_user_path(@user) %></td>
             <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
