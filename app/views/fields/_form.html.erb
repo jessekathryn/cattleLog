@@ -3,7 +3,7 @@
     <h1 class="h2"><%= @user.username.titlecase%>'s Fields</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Field', new_field_path %></button>
+        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'New Field', new_user_field_path(@user) %></button>
         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
         <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
       </div>
@@ -16,7 +16,11 @@
   <%= form_with(model: @field, local: true) do |form| %>
     <div class="field">
       <%= form.label :name %>
-      <%= form.text_field :field_name %>
+      <%= form.text_field :name %>
+    </div>
+     <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
     </div>
     <div class="field">
       <%= form.label :acreage %>
@@ -26,6 +30,10 @@
       <%= form.label :crop %>
       <%= form.text_field :crop %>
     </div>
+     <div class="field">
+      <%= form.label :moisture_level %>
+      <%= form.number_field :moisture%>
+    </div>
     <div class="field">
       <%= form.label :latitude %>
       <%= form.text_field :latitude %>
@@ -33,6 +41,14 @@
     <div class="field">
       <%= form.label :longitude %>
       <%= form.text_field :longitude %>
+    </div>
+     <div class="field">
+      <%= form.label :bushel %>
+      <%= form.number_field :bushel %>
+    </div>
+     <div class="field">
+      <%= form.label :crop_weight_by_the_lb %>
+      <%= form.number_field :crop_weight_lb %>
     </div>
     <div class="field">
       <%= form.hidden_field :user_id, :value => current_user.id %>
