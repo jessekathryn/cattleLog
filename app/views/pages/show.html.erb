@@ -128,8 +128,151 @@
   <!------ SIDE BAR END ------->
 </head>
 <body>
-<a class="styles__maplink__1SoBQ" href="/weather/radar/interactive/l/cf5e5822fbdc4793e115795dc824f500c649a39797b6f5cef6931fe900054159?layer=radar" data-from-string="map_card" data-track-string="todaymap" aria-label="Radar" classname="styles__maplink__1SoBQ"></a>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Weather</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <p><%= notice %></p>
+        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+      </div>
+      <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <span data-feather="calendar"></span>
+        This week
+      </button>
+    </div>
+  </div>
+<div id="main-MapCard-a1d570ab-5e4d-4ccf-a997-d8021f5d680d">
+										<div>
+											<div
+												class="styles__mapCardContainer__2hTLE"
+												className="styles__mapCardContainer__2hTLE"
+											>
+												<header aria-label="Radar">
+													<span class="styles__title__bjESc"
+														><span
+															class="icon icon-font iconset-ui icon-radar1"
+															className="icon icon-font iconset-ui icon-radar1"
+														></span
+														><!---->Storms in View</span
+													><a
+														class="styles__mapCardArrow__22m3J"
+														href="/weather/radar/interactive/l/cf5e5822fbdc4793e115795dc824f500c649a39797b6f5cef6931fe900054159?layer=radar&amp;animation=true&amp;zoom=9"
+														title="Map"
+														data-track-string="todaymap_weatherinmotion"
+														>Radar<span
+															class="icon icon-font iconset-arrows icon-arrow-right-line"
+															className="icon icon-font iconset-arrows icon-arrow-right-line"
+														></span
+													></a>
+												</header>
 
+												<div class="styles__narrative__ZiSrU">
+													Thunderstorms possible at 8:00am.
+												</div>
+												<div class="styles__mapcontainer__vxLv-">
+													<div
+														class="styles__map__3b9Wr"
+														id="ts-0"
+														style="background-image:url(https://api.weather.com/v2/maps/dynamic?geocode=32.5,-80.5&h=600&w=800&lod=7&product=radarFcst&map=light&format=jpg&language=en&apiKey=d522aa97197fd864d36b418f39ebb323&a=0&ts=1580969700&fts=1580970600);background-position:center;background-repeat:no-repeat;animation-delay:0ms;opacity:1;"
+														className="styles__map__3b9Wr"
+													>
+														<span
+															class="styles__timestamp__2nR6x"
+															className="styles__timestamp__2nR6x"
+															><span style="animation-delay:0ms;"
+																>Now</span
+															></span
+														>
+													</div>
+													<a
+														class="styles__maplink__1SoBQ"
+														href="/weather/radar/interactive/l/cf5e5822fbdc4793e115795dc824f500c649a39797b6f5cef6931fe900054159?layer=radar"
+														data-from-string="map_card"
+														data-track-string="todaymap"
+														aria-label="Radar"
+														className="styles__maplink__1SoBQ"
+													></a>
+												</div>
+												<div class="styles__locationpin__2CxLQ">
+													<img
+														src="https://s.w-x.co/map-assets/generic-map/location/locationPin.png"
+														alt="Your location"
+														style="left: calc(45.44186217963028% - 27px);
+      top: calc(36.11125000000005% - 37px)"
+													/>
+												</div>
+												<div>
+													<div class="styles__attribution__1GbnH">
+														<span class="styles__mapboxLogo__2f-SM"
+															><i class=""
+																><svg
+																	id="new"
+																	xmlns="http://www.w3.org/2000/svg"
+																	viewBox="0 0 800 180"
+																>
+																	<path
+																		d="M594.6 49.8c-9.9 0-19.4 4.1-26.3 11.3V23c0-1.2-1-2.2-2.2-2.2h-13.4c-1.2 0-2.2 1-2.2 2.2v103c0 1.2 1 2.2 2.2 2.2h13.4c1.2 0 2.2-1 2.2-2.2v-7.1c6.9 7.2 16.3 11.3 26.3 11.3 20.9 0 37.8-18 37.8-40.2s-16.9-40.2-37.8-40.2zm-3.1 64.3c-12.7 0-23-10.6-23.1-23.8v-.6c.2-13.2 10.4-23.8 23.1-23.8 12.8 0 23.1 10.8 23.1 24.1s-10.4 24.1-23.1 24.1zM681.7 49.8c-22.6 0-40.9 18-40.9 40.2s18.3 40.2 40.9 40.2c22.6 0 40.9-18 40.9-40.2s-18.3-40.2-40.9-40.2zm-.1 64.3c-12.8 0-23.1-10.8-23.1-24.1s10.4-24.1 23.1-24.1 23.1 10.8 23.1 24.1-10.4 24.1-23.1 24.1zM431.6 51.8h-13.4c-1.2 0-2.2 1-2.2 2.2v7.1c-6.9-7.2-16.3-11.3-26.3-11.3-20.9 0-37.8 18-37.8 40.2s16.9 40.2 37.8 40.2c9.9 0 19.4-4.1 26.3-11.3v7.1c0 1.2 1 2.2 2.2 2.2h13.4c1.2 0 2.2-1 2.2-2.2V54c0-1.2-1-2.2-2.2-2.2zm-38.8 62.3c-12.8 0-23.1-10.8-23.1-24.1s10.4-24.1 23.1-24.1c12.7 0 23 10.6 23.1 23.8v.6c-.1 13.2-10.4 23.8-23.1 23.8zM498.5 49.8c-9.9 0-19.4 4.1-26.3 11.3V54c0-1.2-1-2.2-2.2-2.2h-13.4c-1.2 0-2.2 1-2.2 2.2v103c0 1.2 1 2.2 2.2 2.2H470c1.2 0 2.2-1 2.2-2.2v-38.1c6.9 7.2 16.3 11.3 26.3 11.3 20.9 0 37.8-18 37.8-40.2s-16.9-40.2-37.8-40.2zm-3.1 64.3c-12.7 0-23-10.6-23.1-23.8v-.6c.2-13.2 10.4-23.8 23.1-23.8 12.8 0 23.1 10.8 23.1 24.1s-10.3 24.1-23.1 24.1zM311.8 49.8c-10 .1-19.1 5.9-23.4 15-4.9-9.3-14.7-15.1-25.2-15-8.2 0-15.9 4-20.7 10.6V54c0-1.2-1-2.2-2.2-2.2h-13.4c-1.2 0-2.2 1-2.2 2.2v72c0 1.2 1 2.2 2.2 2.2h13.4c1.2 0 2.2-1 2.2-2.2V82.9c.5-9.6 7.2-17.3 15.4-17.3 8.5 0 15.6 7.1 15.6 16.4v44c0 1.2 1 2.2 2.2 2.2h13.5c1.2 0 2.2-1 2.2-2.2l-.1-44.8c1.2-8.8 7.5-15.6 15.2-15.6 8.5 0 15.6 7.1 15.6 16.4v44c0 1.2 1 2.2 2.2 2.2h13.5c1.2 0 2.2-1 2.2-2.2l-.1-49.5c0-14.8-12.6-26.7-28.1-26.7zM794.7 125.1l-23.2-35.3 23-35c.6-.9.3-2.2-.6-2.8-.3-.2-.7-.3-1.1-.3h-15.5c-1.2 0-2.3.6-2.9 1.6L760.9 76l-13.5-22.6c-.6-1-1.7-1.6-2.9-1.6H729c-1.1 0-2 .9-2 2 0 .4.1.8.3 1.1l23 35-23.2 35.3c-.6.9-.3 2.2.6 2.8.3.2.7.3 1.1.3h15.5c1.2 0 2.3-.6 2.9-1.6l13.8-23 13.8 23c.6 1 1.7 1.6 2.9 1.6H793c1.1 0 2-.9 2-2 0-.4-.1-.8-.3-1.2z"
+																	></path>
+																	<g>
+																		<path
+																			d="M93.9 1.1C44.8 1.1 5 40.9 5 90s39.8 88.9 88.9 88.9 88.9-39.8 88.9-88.9c0-49.1-39.8-88.9-88.9-88.9zm42.2 110.7c-30.4 30.4-84.7 20.7-84.7 20.7s-9.8-54.2 20.7-84.7C89 30.9 117 31.6 134.7 49.2s18.3 45.7 1.4 62.6z"
+																		></path>
+																		<path
+																			d="M104.1 53.2l-8.7 17.9-17.9 8.7 17.9 8.7 8.7 17.9 8.7-17.9 17.9-8.7-17.9-8.7z"
+																		></path>
+																	</g></svg></i></span
+														><span class="styles__infoicon__31PBl"
+															><i class=""
+																><svg
+																	viewBox="-20 -20 460 460"
+																	style="enable-background:new 0 0 416.979 416.979;"
+																>
+																	<circle
+																		xmlns="http://www.w3.org/2000/svg"
+																		cx="208"
+																		cy="208"
+																		r="208"
+																		fill="white"
+																		stroke="white"
+																		stroke-width="50"
+																	></circle>
+																	<path
+																		d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85 c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786 c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576 c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765 c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z"
+																	></path>
+																	<!---->
+																	<!---->// eslint-disable-next-line
+																</svg></i
+															></span
+														>
+													</div>
+													<div class="styles__mapboxlinks__3cnWr">
+														<a
+															target="_blank"
+															rel="noopener noreferrer"
+															href="https://mapbox.com/about/maps"
+															>©
+															<!---->2020<!---->
+															Mapbox</a
+														><!---->
+														<a
+															target="_blank"
+															rel="noopener noreferrer"
+															href="https://www.openstreetmap.org/about"
+															>© OpenStreetMap</a
+														><span class="styles__separator__3bgo-">|</span
+														><a
+															target="_blank"
+															rel="noopener noreferrer"
+															href="https://www.mapbox.com/map-feedback/"
+															>Improve this map</a
+														>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 </body>
 <!------ FOOTER ------->
 <footer class="footer mt-auto py-3">
