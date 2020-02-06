@@ -32,10 +32,18 @@
       <%= form.collection_check_boxes :field_id, current_user.fields.all, :id, :field_name %>
       <div class="field">
         <%= form.hidden_field :user_id, :value => @user.id %>
-        <%= form.label :Report_for_cows%>
-        <%= form.collection_check_boxes :cow_id, current_user.cows.all, :id, :name %>
-        <br>
-        <div class="actions">
-          <button class="btn btn-primary" type="submit">Save</button>
-        </div>
-      <% end %>
+        <%= form.label :Tools_included %>
+        <%= form.collection_check_boxes :id, current_user.tools.all, :id, :name %>
+        <div class="field">
+          <%= form.hidden_field :user_id, :value => @user.id %>
+          <%= form.label :Expenses_included %>
+          <%= form.collection_check_boxes :expense_id, current_user.expenses.all, :id, :expense_name %>
+          <div class="field">
+            <%= form.hidden_field :user_id, :value => @user.id %>
+            <%= form.label :Report_for_cows%>
+            <%= form.collection_check_boxes :id, current_user.cows.all, :id, :name %>
+            <br>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+          <% end %>

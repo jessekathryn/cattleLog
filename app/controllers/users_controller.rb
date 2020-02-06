@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   before_action :require_logged_in, except: [:new, :create]
   
   def index
-    if !is_admin?
-      render :home
-    else
+   if !is_admin?
+     render :home
+   else
     @users = User.all
   end
 end
