@@ -121,7 +121,7 @@
   </div>
 </p>
 <% current_user.fields.each do |field| %>
-  <%= field.field_name.titlecase %> Field is
+  <%= field.name.titlecase %> Field is
   <%= field.acreage %> acres and located at the coordinates (<%= field.latitude %>, <%= field.longitude %>). 
   <div id="map-container">
     <div class="col-xl-5">

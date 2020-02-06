@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_022043) do
+ActiveRecord::Schema.define(version: 2020_02_06_163751) do
 
   create_table "cows", force: :cascade do |t|
     t.string "name"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_022043) do
     t.integer "fuel"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "field_id"
   end
 
   create_table "users", force: :cascade do |t|

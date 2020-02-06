@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -130,6 +131,7 @@
 <body>
  <%= yield %>
 </body>
+<% end%>
  <!------ RUBY ERROR NOTICE ------->
   <% if @user.errors.any? %>
     <div id="error_explanation">

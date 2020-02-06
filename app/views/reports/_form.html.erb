@@ -26,10 +26,11 @@
       <%= form.label :content%>
       <%= form.text_field :content %>
     </div>
+      <%= form.hidden_field :reportable_id, :value => @user.id %>
     <div class="field">
       <%= form.hidden_field :user_id, :value => @user.id %>
       <%= form.label :Fields_included %>
-      <%= form.collection_check_boxes :field_id, current_user.fields.all, :id, :field_name %>
+      <%= form.collection_check_boxes :id, current_user.fields.all, :id, :name %>
       <div class="field">
         <%= form.hidden_field :user_id, :value => @user.id %>
         <%= form.label :Tools_included %>
@@ -37,7 +38,7 @@
         <div class="field">
           <%= form.hidden_field :user_id, :value => @user.id %>
           <%= form.label :Expenses_included %>
-          <%= form.collection_check_boxes :expense_id, current_user.expenses.all, :id, :expense_name %>
+          <%= form.collection_check_boxes :id, current_user.expenses.all, :id, :name %>
           <div class="field">
             <%= form.hidden_field :user_id, :value => @user.id %>
             <%= form.label :Report_for_cows%>

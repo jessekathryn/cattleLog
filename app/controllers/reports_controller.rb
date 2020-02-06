@@ -3,7 +3,8 @@ class ReportsController < ApplicationController
   before_action :logged_in?
 
   def index
-    @reports = Report.all
+    @user = User.find_by(id: params[:user_id])
+    @reports = @user.reports
   end
 
   def show
@@ -17,8 +18,8 @@ class ReportsController < ApplicationController
   end
 
   def create
-    @report = Report.new(report_params)
-    #@report
+    @report = Report.create(report_params)
+    @report.update_attribute(:reportable, current_user)
     if @report.save
       redirect_to @report
     else

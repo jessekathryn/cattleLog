@@ -23,8 +23,9 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
-    <% current_user.reports.each do |report| %>
+    <% @reports.each do |report| %>
       <tr>
         <td><%= report.name %></td>
         <td><%= report.date %></td>

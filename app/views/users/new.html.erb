@@ -28,12 +28,13 @@
         </div>
         <div class="mx-auto">
           <h1 class="h3 mb-3 font-weight-normal">Join Cattlelog</h1>
-          <!-- Ruby  -->
+          <!-- Ruby Validation Error  -->
           <% if @user.errors.any? %>
             <% @user.errors.full_messages.each do |message| %>
               <%= message %>
             <% end %>
           <% end %>
+          <!-- Ruby Validation Error  -->
           <div class="col-xl-9 mx-auto">
             <p> <%= form_with(model: @user, local: true, layout: false) do |form| %> </p>
               <%= form.text_field :username, class: "form-control form-control-lg", placeholder: "Username", required: "" %>

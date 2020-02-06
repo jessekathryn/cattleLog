@@ -11,6 +11,7 @@ class User < ApplicationRecord
     accepts_nested_attributes_for :fields
     accepts_nested_attributes_for :expenses
     accepts_nested_attributes_for :tools
+    accepts_nested_attributes_for :reports
 
     validates :email, uniqueness: true
     validates :username, length: { minimum: 2, message: "Must be 2 characters long." }

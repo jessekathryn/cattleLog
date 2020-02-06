@@ -1,5 +1,5 @@
 class Expense < ApplicationRecord
-  belongs_to :user
+  belongs_to :tool
 
   def user_id
     self.try(:user).try(:id)
