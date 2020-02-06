@@ -19,6 +19,18 @@
       <%= form.text_field :name %>
     </div>
     <div class="field">
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+    <div class="field">
+      <%= form.label :fuel %>
+      <%= form.text_field :fuel %>
+    </div>
+    <div class="field">
+      <%= form.label :fuel %>
+      <%= form.text_field :fuel %>
+    </div>
+    <div class="field">
       <%= form.hidden_field :user_id, :value => @user.id %>
       <%= form.label :Fields_for %>
       <%= form.collection_select :field_id, current_user.fields.all, :id, :field_name %>
