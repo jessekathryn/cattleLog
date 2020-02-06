@@ -3,10 +3,28 @@ class FieldsController < ApplicationController
   before_action :logged_in?
 
   def index
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      if @user.nil?
+        redirect_to users_path, notice: "User not found"
+      else
+        @fields = @user.fields
+      end
+    else
     @fields = Field.all
+   end
   end
 
   def show
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      @field = @user.fields.find_by(id: params[:id])
+      if @field.nil?
+        redirect_to user_fields_path(@user), notice: "Field not found"
+      end
+      else
+        @field = Field.find(params[:id])
+    end
   end
 
   def new
@@ -18,7 +36,6 @@ class FieldsController < ApplicationController
 
   def create
     @field = Field.new(field_params)
-
       if @field.save
         redirect_to @field
       else
@@ -48,6 +65,6 @@ class FieldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def field_params
-      params.require(:field).permit(:field_name, :acreage, :crop, :latitude, :longitude, :user_id)
+      params.require(:field).permit(:name, :description, :acreage, :crop, :moisture, :latitude, :longitude, :cow_id, :bushel, :crop_weight_lb, :user_id)
     end
 end

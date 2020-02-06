@@ -6,7 +6,7 @@ class CowsController < ApplicationController
     if params[:user_id]
       @user = User.find_by(id: params[:user_id])
       if @user.nil?
-        redirect_to users_path, notice: "user not found"
+        redirect_to users_path, notice: "User not found"
       else
         @cows = @user.cows
       end
@@ -20,7 +20,7 @@ end
       @user = User.find_by(id: params[:user_id])
       @cow = @user.cows.find_by(id: params[:id])
       if @cow.nil?
-        redirect_to user_cows_path(@user), notice: "cow not found"
+        redirect_to user_cows_path(@user), notice: "Cow not found"
       end
       else
         @cow = Cow.find(params[:id])
@@ -46,7 +46,7 @@ end
   def update
     @cow = Cow.find(params[:id])
     if @cow.update(cow_params)
-      redirect_to @cow
+      redirect_to @cow, notice: 'Cow was successfully updated.'
     else
       render :new
     end

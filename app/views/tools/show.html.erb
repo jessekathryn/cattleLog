@@ -13,12 +13,33 @@
       </button>
     </div>
   </div>
-  <p id="notice"><%= notice %></p>
-  <p>
-    <strong>Tool:</strong>
-    <%= @tool.name %>
-  </p>
-  <p>
-    <strong>Field ID:</strong>
-    <%= @tool.field_id %>
-  </p>
+   </li><div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Field and Cattle detail as of <%= Time.zone.now.strftime("%m/%d/%Y") %></div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Field</th>
+                        <th>Price</th>
+                        <th>Tune Up Date</th>
+                        <th>Fuel Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <% current_user.tools.each do |tool| %>
+                      <td><%= tool.name.titlecase %> </td>
+                      <td><%= tool.field_ids %></td>
+                      <td><%= tool.price %> </td>  
+                      <td><%= tool.tune_up%></td>
+                      <td><%= tool.fuel %></td>
+                  </tr>
+                  <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  

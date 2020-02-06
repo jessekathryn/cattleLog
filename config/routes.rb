@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
 
   resources :cows
+  resources :fields
+  resources :tools
+  resources :expenses
+  resources :pages
+  resources :reports
 
   resources :users do 
     resources :cows, only: [:show, :index, :new]
-    # resources :expenses
-    # resources :fields
-    # resources :tools
-    # resources :pages
-    # resources :reports
+    resources :expenses, only: [:show, :index, :new]
+    resources :fields, only: [:show, :index, :new]
+    resources :tools, only: [:show, :index, :new]
+    resources :pages, only: [:show, :index, :new]
+    resources :reports, only: [:show, :index, :new]
   end
 
   get '/auth/:provider/callback', to: 'sessions#create'

@@ -10,6 +10,7 @@ class CreateFields < ActiveRecord::Migration[6.0]
       t.string :longitude
       t.integer :bushel 
       t.integer :crop_weight_lb
+      t.integer :user_id
       t.timestamps
     end
   end

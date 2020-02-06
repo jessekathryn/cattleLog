@@ -15,24 +15,6 @@
           </button>
         </div>
       </div> 
- <div class="table-responsive">
-    <table class="table table-striped table-sm">
-    <thead>
-      <tr>
-      <th>Name</th>
-      <th>Tag Number</th>
-      <th>Cow Status</th>
-      <th>Age (Years)</th>
-      <th>Birthdate</th>
-      <th>Weight</th>
-      <th>Health</th>
-      <th>Color</th>
-      <th>Notes</th>
-      <th>Field Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
     <% current_user.cows.each do |cow| %>
                         <td><%= cow.name %> </td>
                         <td><%= cow.tag_number %> </td>  
