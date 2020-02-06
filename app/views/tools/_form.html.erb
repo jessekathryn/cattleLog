@@ -20,23 +20,23 @@
     </div>
     <div class="field">
       <%= form.label :price %>
-      <%= form.text_field :price %>
+      <%= form.number_field :price %>
     </div>
     <div class="field">
-      <%= form.label :fuel %>
+      <%= form.label :fuel_level %>
       <%= form.text_field :fuel %>
     </div>
     <div class="field">
-      <%= form.label :fuel %>
-      <%= form.text_field :fuel %>
+      <%= form.label :next_tune_up_date %>
+      <%= form.date_field :tune_up %>
     </div>
     <div class="field">
       <%= form.hidden_field :user_id, :value => @user.id %>
       <%= form.label :Fields_for %>
       <%= form.collection_select :field_id, current_user.fields.all, :id, :field_name %>
-      <div class="field">
-        <%= form.hidden_field :user_id, :value => @user.id %>
-      </div>
+    <div class="field">
+      <%= form.hidden_field :user_id, :value => @user.id %>
+    </div>
       <br>
       <div class="actions">
         <button class="btn btn-primary" type="submit">Save</button>
