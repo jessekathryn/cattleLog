@@ -11,9 +11,9 @@ class CowsController < ApplicationController
         @cows = @user.cows
       end
     else
-    @cows = Cow.all
+      @cows = Cow.all
+    end
   end
-end 
 
   def show
     if params[:user_id]
@@ -22,8 +22,8 @@ end
       if @cow.nil?
         redirect_to user_cows_path(@user), notice: "Cow not found"
       end
-      else
-        @cow = Cow.find(params[:id])
+    else
+      @cow = Cow.find(params[:id])
     end
   end
 
@@ -36,17 +36,17 @@ end
 
   def create
     @cow = Cow.new(cow_params)
-      if @cow.save
-        redirect_to @cow
-      else
-        render :new
+    if @cow.save
+      redirect_to @cow
+    else
+      render :new
     end
   end
 
   def update
     @cow = Cow.find(params[:id])
     if @cow.update(cow_params)
-      redirect_to @cow, notice: 'Cow was successfully updated.'
+      redirect_to @cow, notice: "Cow was successfully updated."
     else
       render :new
     end
@@ -59,12 +59,12 @@ end
   end
 
   private
-    def set_cow
-      @cow = Cow.find(params[:id])
-    end
 
-    def cow_params
-      params.require(:cow).permit(:name, :tag_number, :status, :age, :days, :birthdate, :weight, :health, :color, :user_id, :notes, :shots, :history, :field_name, :pregnant, :calving_date, :pregnancy_date)
-    end       
-        
+  def set_cow
+    @cow = Cow.find(params[:id])
   end
+
+  def cow_params
+    params.require(:cow).permit(:name, :tag_number, :status, :age, :days, :birthdate, :weight, :health, :color, :user_id, :notes, :shots, :history, :field_name, :pregnant, :calving_date, :pregnancy_date)
+  end
+end

@@ -14,10 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-    return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
+    return redirect_to(controller: "sessions", action: "new") unless logged_in?
   end
 
   def is_admin?
-     current_user.admin
+    current_user.admin
   end
 end
