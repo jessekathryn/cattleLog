@@ -67,6 +67,6 @@ class ExpensesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def expense_params
-    params.require(:expense).permit(:expense_name, :truck, :chemicals, :conservation, :depreciation, :employees, :feed, :freight, :gas, :insurance, :interest, :mortgage, :rent, :repais, :seeds, :storage, :supplies, :taxes, :vet, :tools, :fencing_land, :calf, :dues, :misc_labor, :professional_fees, :user_id, :field_id, :cow_id)
+    params.require(:expense).permit(:name, :date, :description, :truck, :chemicals, :conservation, :depreciation, :employees, :feed, :freight, :gas, :insurance, :interest, :mortgage, :rent, :repairs, :seeds, :storage, :supplies, :taxes, :vet, :tools, :fencing, :calf, :dues, :misc_labor, :professional_fees, :user_id)
   end
 end

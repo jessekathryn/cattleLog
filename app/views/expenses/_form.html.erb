@@ -10,16 +10,16 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :cow_id%>
-    <%= form.text_field :cow_id %>
-  </div>
-  <div class="field">
-    <%= form.label :field_id %>
-    <%= form.text_field :field_id %>
+    <%= form.label :expense_name %>
+    <%= form.text_field :name %>
   </div>
   <div class="field">
     <%= form.label :expense_date %>
-    <%= form.text_field :expense_name %>
+    <%= form.text_field :date %>
+  </div>
+   <div class="field">
+    <%= form.label :expense_description %>
+    <%= form.text_field :description %>
   </div>
   <div class="field">
     <%= form.label :truck %>
@@ -98,8 +98,8 @@
     <%= form.number_field :tools %>
   </div>
   <div class="field">
-    <%= form.label :fencing_land %>
-    <%= form.number_field :fencing_land %>
+    <%= form.label :fencing_for_land_by_feet%>
+    <%= form.number_field :fencing %>
   </div>
   <div class="field">
     <%= form.label :calf %>
@@ -117,9 +117,9 @@
     <%= form.label :professional_fees %>
     <%= form.number_field :professional_fees %>
   </div>
-  <div class="field">
-    <%= form.label :field_id%>
-    <%= form.text_field :field_id %>
+    <div class="field">
+    <%= form.label :cow_id%>
+    <%= form.text_field :cow_id %>
   </div>
   <div class="field">
     <%= form.hidden_field :user_id, :value => current_user.id %>

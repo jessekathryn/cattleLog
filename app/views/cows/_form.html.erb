@@ -50,6 +50,9 @@
       <%= form.hidden_field :user_id, :value => current_user.id %>
     </div>
     <div class="field">
+      <%= form.hidden_field :field_id, :value => current_user.fields.ids %>
+    </div>
+    <div class="field">
       <%= form.label :notes %>
       <%= form.text_field :notes %>
     </div>

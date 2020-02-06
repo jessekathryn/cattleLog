@@ -1,8 +1,9 @@
 class Field < ApplicationRecord
-   belongs_to :user
-   has_many :tools, through: :user
+  belongs_to :cow
+  has_many :tools
+  has_many :expenses, through: :tools
 
-   def user_id
-      self.try(:user).try(:id)
-   end
+  def cow_id
+    self.try(:user).try(:id)
+  end
 end

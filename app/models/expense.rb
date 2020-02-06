@@ -1,7 +1,7 @@
 class Expense < ApplicationRecord
-   belongs_to :user
+  belongs_to :user
 
-   def user_id
-      self.try(:user).try(:id)
-   end
+  def user_id
+    self.try(:user).try(:id)
+  end
 end

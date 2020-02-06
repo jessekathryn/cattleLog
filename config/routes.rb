@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :reports, only: [:show, :index, :new]
   end
 
+  #authorization_login
   get '/auth/:provider/callback', to: 'sessions#create'
   
   get '/signin' => 'sessions#new', as: '/login'
@@ -24,7 +25,9 @@ Rails.application.routes.draw do
   get '/signout' => 'welcome#home'
   post '/signout' => 'sessions#destroy', as: 'logout'           
   
+  #Add-ons
   get '/search' => 'pages#search', :as => 'search_page'
+  get '/weather' => 'pages#weather', :as => 'weather_page'
 
   root 'welcome#home'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

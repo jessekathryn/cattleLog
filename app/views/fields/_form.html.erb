@@ -51,7 +51,10 @@
       <%= form.number_field :crop_weight_lb %>
     </div>
     <div class="field">
-      <%= form.hidden_field :user_id, :value => current_user.id %>
+      <%= form.hidden_field :cow_id, :value => current_user.cows.ids %>
+    </div>
+    <div class="field">
+      <%= form.hidden_field :tool_id, :value => current_user.tools.ids %>
     </div>
     <br>
     <div class="actions">

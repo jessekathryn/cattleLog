@@ -9,4 +9,8 @@ class PagesController < ActionController::Base
     @results = User.all.where("lower(name) LIKE :search", search: @parameter)
     # end
   end
+
+  def show
+    
+  end
 end

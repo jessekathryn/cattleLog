@@ -15,7 +15,7 @@
     </div>
   </div>
     <% current_user.expenses.each do |expense| %>
-                     <td><%= expense.name %></td>
+                     <td><%=expense.name %></td>
                     <td><%= expense.date %></td>
                     <td><%= expense.description %></td>
                     <td><%= expense.truck %></td>
