@@ -9,7 +9,7 @@ class FieldsController < ApplicationController
         redirect_to cows_path, notice: "Cow not found"
       else
         @fields = @user.fields
-                  #cows.fields?
+        #cows.fields?
       end
     else
       @fields = Field.all
